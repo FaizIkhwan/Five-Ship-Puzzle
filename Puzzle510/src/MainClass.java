@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Faiz Ikhwan
+ * @author Faiz Ikhwan & Shah
  */
 public class MainClass {
 
