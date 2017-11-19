@@ -6,19 +6,14 @@
 
 /**
  *
- * @author Faiz Ikhwann
+ * @author Faiz Ikhwan
  */
-import java.util.*;
-import javax.swing.*;
-import javax.*;
-
-public class MainMenu extends javax.swing.JDialog {
+public class MainMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form MainMenu
      */
-    public MainMenu(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public MainMenu() {
         initComponents();
     }
 
@@ -31,118 +26,105 @@ public class MainMenu extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelTitle = new javax.swing.JLabel();
-        buttonQNA = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        buttonQna = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        buttonCredit = new javax.swing.JButton();
-        toggleButtonSound = new javax.swing.JToggleButton();
+        buttonAbout = new javax.swing.JButton();
+        buttonSound = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitle.setText("Title");
+        jLabel1.setText("jLabel1");
 
-        buttonQNA.setText("Q & A");
-        buttonQNA.setToolTipText("");
-        buttonQNA.addActionListener(new java.awt.event.ActionListener() {
+        buttonQna.setText("Question & Answer");
+        buttonQna.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonQNAActionPerformed(evt);
+                buttonQnaActionPerformed(evt);
             }
         });
 
         jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jButton3.setText("jButton3");
 
         jButton4.setText("jButton4");
 
-        buttonCredit.setText("Credit");
-
-        toggleButtonSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundOn1.png"))); // NOI18N
-        toggleButtonSound.setToolTipText("");
-        toggleButtonSound.setActionCommand("Sound off");
-        toggleButtonSound.setMaximumSize(new java.awt.Dimension(50, 50));
-        toggleButtonSound.setMinimumSize(new java.awt.Dimension(50, 50));
-        toggleButtonSound.setPreferredSize(new java.awt.Dimension(50, 50));
-        toggleButtonSound.addActionListener(new java.awt.event.ActionListener() {
+        buttonAbout.setText("About");
+        buttonAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleButtonSoundActionPerformed(evt);
+                buttonAboutActionPerformed(evt);
             }
         });
+
+        buttonSound.setText("Sound");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonCredit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(toggleButtonSound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(161, 161, 161)
+                                    .addComponent(jLabel1))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(144, 144, 144)
+                                    .addComponent(buttonQna)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton2)
+                                        .addGap(32, 32, 32))
+                                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGap(0, 90, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(buttonAbout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(buttonSound)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(186, 186, 186)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonQNA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(buttonQNA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(buttonQna)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonCredit, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(toggleButtonSound, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttonAbout)
+                    .addComponent(buttonSound))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void toggleButtonSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleButtonSoundActionPerformed
+    private void buttonAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAboutActionPerformed
+        // TODO add your handling code here:
+        new Credit().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_buttonAboutActionPerformed
 
-        /*if(toggleButtonSound.isSelected())
-        {
-            toggleButtonSound.setIcon(new imageIcon(getClass().getResource("/soundOff.png")));
-        }
-        else
-        {
-            toggleButtonSound.setIcon(new imageIcon(getClass().getResource("/soundOn.png")));
-        } */
-    }//GEN-LAST:event_toggleButtonSoundActionPerformed
-
-    private void buttonQNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonQNAActionPerformed
+    private void buttonQnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonQnaActionPerformed
+        // TODO add your handling code here:
         new Qna().setVisible(true);
         dispose();
-        
-    }//GEN-LAST:event_buttonQNAActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new GraphicalShip().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_buttonQnaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,28 +153,21 @@ public class MainMenu extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MainMenu dialog = new MainMenu(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new MainMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonCredit;
-    private javax.swing.JButton buttonQNA;
+    private javax.swing.JButton buttonAbout;
+    private javax.swing.JButton buttonQna;
+    private javax.swing.JButton buttonSound;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel labelTitle;
-    private javax.swing.JToggleButton toggleButtonSound;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
