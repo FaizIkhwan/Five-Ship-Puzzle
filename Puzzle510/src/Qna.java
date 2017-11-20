@@ -40,7 +40,6 @@ public class Qna extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelQNA = new javax.swing.JLabel();
         panelQna = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         InfoLabel = new javax.swing.JLabel();
@@ -59,20 +58,27 @@ public class Qna extends javax.swing.JFrame {
         ButtonEnglish = new javax.swing.JRadioButton();
         ButtonSpanish = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        labelQNA = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menuExit = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        menuSoundOption = new javax.swing.JMenu();
+        menuSoundOn = new javax.swing.JMenuItem();
+        menuSoundOff = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 255));
-
-        labelQNA.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelQNA.setText("Ship Information");
+        setPreferredSize(new java.awt.Dimension(470, 561));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(InfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                .addGap(170, 170, 170)
+                .addComponent(InfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -80,7 +86,7 @@ public class Qna extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(InfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ContentButton.setText("Content of the");
@@ -103,7 +109,7 @@ public class Qna extends javax.swing.JFrame {
         panelQnaLayout.setHorizontalGroup(
             panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelQnaLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ShipButton)
                     .addGroup(panelQnaLayout.createSequentialGroup()
@@ -189,8 +195,54 @@ public class Qna extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Select a ship.");
+
+        jPanel1.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel1.setPreferredSize(new java.awt.Dimension(348, 66));
+
+        labelQNA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        labelQNA.setText("Ship Information");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addComponent(labelQNA)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(labelQNA, javax.swing.GroupLayout.PREFERRED_SIZE, 36, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
+        );
+
+        jMenu1.setText("File");
+
+        menuExit.setText("Exit");
+        jMenu1.add(menuExit);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Option");
+
+        menuSoundOption.setText("Sound");
+
+        menuSoundOn.setText("Sound On");
+        menuSoundOption.add(menuSoundOn);
+
+        menuSoundOff.setText("Sound Off");
+        menuSoundOption.add(menuSoundOff);
+
+        jMenu2.add(menuSoundOption);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,30 +265,27 @@ public class Qna extends javax.swing.JFrame {
                                 .addComponent(ButtonSpanish))
                             .addComponent(jLabel1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(183, 183, 183)
-                        .addComponent(labelQNA))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(labelQNA, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonFrench)
                     .addComponent(ButtonGreek)
                     .addComponent(ButtonBrazilian)
                     .addComponent(ButtonEnglish)
                     .addComponent(ButtonSpanish))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -325,8 +374,16 @@ public class Qna extends javax.swing.JFrame {
     private javax.swing.JLabel ShipName2;
     private javax.swing.JLabel ShipName4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelQNA;
+    private javax.swing.JMenuItem menuExit;
+    private javax.swing.JMenuItem menuSoundOff;
+    private javax.swing.JMenuItem menuSoundOn;
+    private javax.swing.JMenu menuSoundOption;
     private javax.swing.JPanel panelQna;
     // End of variables declaration//GEN-END:variables
 }
