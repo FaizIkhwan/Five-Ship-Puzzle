@@ -31,9 +31,18 @@ public class Credit extends javax.swing.JFrame {
         labelAbout = new javax.swing.JLabel();
         buttonMainMenu = new javax.swing.JButton();
         buttonExit = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        menuFile = new javax.swing.JMenu();
+        menuExit = new javax.swing.JMenuItem();
+        menuOption = new javax.swing.JMenu();
+        menuSoundOption = new javax.swing.JMenu();
+        menuSoundOn = new javax.swing.JMenuItem();
+        menuSoundOff = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(102, 255, 204));
 
         labelDescription.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelDescription.setText("<html>Most popular puzzle game! Easy to play and pleasureable game for all age.<br>Easy to learn and fun to master gameplay. We really hope you enjoy it!<br><br><br>Version:<br>1.2<br>Updated on:<br>19 Nov 2017<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil</html>");
@@ -48,7 +57,7 @@ public class Credit extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(230, 230, 230)
+                .addGap(181, 181, 181)
                 .addComponent(labelAbout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -60,7 +69,7 @@ public class Credit extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        buttonMainMenu.setBackground(new java.awt.Color(204, 255, 204));
+        buttonMainMenu.setBackground(new java.awt.Color(102, 255, 204));
         buttonMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/homebutton (1).png"))); // NOI18N
         buttonMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +77,7 @@ public class Credit extends javax.swing.JFrame {
             }
         });
 
-        buttonExit.setBackground(new java.awt.Color(204, 255, 204));
+        buttonExit.setBackground(new java.awt.Color(102, 255, 204));
         buttonExit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         buttonExit.setText("Exit");
         buttonExit.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +85,38 @@ public class Credit extends javax.swing.JFrame {
                 buttonExitActionPerformed(evt);
             }
         });
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shahResize.jpg"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikhwanResize.jpg"))); // NOI18N
+
+        menuFile.setText("File");
+
+        menuExit.setText("Exit");
+        menuExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuExitActionPerformed(evt);
+            }
+        });
+        menuFile.add(menuExit);
+
+        jMenuBar1.add(menuFile);
+
+        menuOption.setText("Option");
+
+        menuSoundOption.setText("Sound");
+
+        menuSoundOn.setText("Sound On");
+        menuSoundOption.add(menuSoundOn);
+
+        menuSoundOff.setText("Sound Off");
+        menuSoundOption.add(menuSoundOff);
+
+        menuOption.add(menuSoundOption);
+
+        jMenuBar1.add(menuOption);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,7 +126,13 @@ public class Credit extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelDescription, javax.swing.GroupLayout.DEFAULT_SIZE, 561, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addGap(158, 158, 158))
+                    .addComponent(labelDescription)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -97,8 +144,14 @@ public class Credit extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(buttonMainMenu, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(buttonExit, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -117,6 +170,11 @@ public class Credit extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_buttonExitActionPerformed
 
+    private void menuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_menuExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -125,8 +183,17 @@ public class Credit extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonExit;
     private javax.swing.JButton buttonMainMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelAbout;
     private javax.swing.JLabel labelDescription;
+    private javax.swing.JMenuItem menuExit;
+    private javax.swing.JMenu menuFile;
+    private javax.swing.JMenu menuOption;
+    private javax.swing.JMenuItem menuSoundOff;
+    private javax.swing.JMenuItem menuSoundOn;
+    private javax.swing.JMenu menuSoundOption;
     // End of variables declaration//GEN-END:variables
 }
