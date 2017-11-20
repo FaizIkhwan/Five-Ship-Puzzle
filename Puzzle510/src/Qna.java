@@ -15,6 +15,7 @@ public class Qna extends javax.swing.JFrame {
      */
     public Qna() {
         initComponents();
+        panelQna.setVisible(false);
     }
 
     /**
@@ -27,87 +28,160 @@ public class Qna extends javax.swing.JFrame {
     private void initComponents() {
 
         labelQNA = new javax.swing.JLabel();
-        textTitle = new javax.swing.JTextField();
+        panelQna = new javax.swing.JPanel();
+        radioButtonFrenchShip = new javax.swing.JRadioButton();
+        radioButtonGreekShip = new javax.swing.JRadioButton();
+        radioButtonBrazilionShip = new javax.swing.JRadioButton();
+        radioButtonEnglishShip = new javax.swing.JRadioButton();
+        radioButtonSpanishShip = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 204, 255));
 
         labelQNA.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelQNA.setText("Q & A");
 
-        textTitle.setText("jTextField1");
-        textTitle.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout panelQnaLayout = new javax.swing.GroupLayout(panelQna);
+        panelQna.setLayout(panelQnaLayout);
+        panelQnaLayout.setHorizontalGroup(
+            panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 521, Short.MAX_VALUE)
+        );
+        panelQnaLayout.setVerticalGroup(
+            panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 200, Short.MAX_VALUE)
+        );
+
+        radioButtonFrenchShip.setText("French Ship");
+        radioButtonFrenchShip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textTitleActionPerformed(evt);
+                radioButtonFrenchShipActionPerformed(evt);
             }
         });
+
+        radioButtonGreekShip.setText("Greek Ship");
+        radioButtonGreekShip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonGreekShipActionPerformed(evt);
+            }
+        });
+
+        radioButtonBrazilionShip.setText("Brazilion Ship");
+        radioButtonBrazilionShip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonBrazilionShipActionPerformed(evt);
+            }
+        });
+
+        radioButtonEnglishShip.setText("English Ship");
+        radioButtonEnglishShip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonEnglishShipActionPerformed(evt);
+            }
+        });
+
+        radioButtonSpanishShip.setText("Spanish Ship");
+        radioButtonSpanishShip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioButtonSpanishShipActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Please select a ship.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(176, Short.MAX_VALUE)
-                .addComponent(labelQNA)
-                .addGap(174, 174, 174))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(textTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelQna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(242, 242, 242)
+                                .addComponent(labelQNA))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(radioButtonFrenchShip)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(radioButtonGreekShip)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(radioButtonBrazilionShip)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(radioButtonEnglishShip)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(radioButtonSpanishShip))
+                                    .addComponent(jLabel1))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(labelQNA)
-                .addGap(18, 18, 18)
-                .addComponent(textTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioButtonFrenchShip)
+                    .addComponent(radioButtonGreekShip)
+                    .addComponent(radioButtonBrazilionShip)
+                    .addComponent(radioButtonEnglishShip)
+                    .addComponent(radioButtonSpanishShip))
+                .addGap(17, 17, 17)
+                .addComponent(panelQna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textTitleActionPerformed
+    private void radioButtonFrenchShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonFrenchShipActionPerformed
+        panelQna.setVisible(true);
+        
+    }//GEN-LAST:event_radioButtonFrenchShipActionPerformed
+
+    private void radioButtonGreekShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonGreekShipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textTitleActionPerformed
+        radioButtonGreekShip.setSelected(false); // buat option lain tk boleh click
+    }//GEN-LAST:event_radioButtonGreekShipActionPerformed
+
+    private void radioButtonBrazilionShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonBrazilionShipActionPerformed
+        // TODO add your handling code here:
+        radioButtonBrazilionShip.setSelected(false);
+    }//GEN-LAST:event_radioButtonBrazilionShipActionPerformed
+
+    private void radioButtonEnglishShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonEnglishShipActionPerformed
+        // TODO add your handling code here:
+        radioButtonEnglishShip.setSelected(false);
+    }//GEN-LAST:event_radioButtonEnglishShipActionPerformed
+
+    private void radioButtonSpanishShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonSpanishShipActionPerformed
+        // TODO add your handling code here:
+        radioButtonSpanishShip.setSelected(false);
+    }//GEN-LAST:event_radioButtonSpanishShipActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Qna().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelQNA;
-    private javax.swing.JTextField textTitle;
+    private javax.swing.JPanel panelQna;
+    private javax.swing.JRadioButton radioButtonBrazilionShip;
+    private javax.swing.JRadioButton radioButtonEnglishShip;
+    private javax.swing.JRadioButton radioButtonFrenchShip;
+    private javax.swing.JRadioButton radioButtonGreekShip;
+    private javax.swing.JRadioButton radioButtonSpanishShip;
     // End of variables declaration//GEN-END:variables
 }
