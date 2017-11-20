@@ -10,12 +10,25 @@
  */
 public class Qna extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Qna
-     */
+    public String[] Ship={"French Ship","Greek Ship","Brazilian Ship","English Ship","Spanish Ship"};
+    public double[] Arrive={5.00,6.00,8.00,9.00,7.00};
+    public String[] Content={"Tea","Coffee","Cocoa","Rice","Corn"};
+    public String[] Chimney={"Blue","Red","Black","White","Green"};
+    public String[] Destination={"Genoa","Hamburg","Manila","Marseille","Port Said"};
+    
+    int i;
+    
+    
     public Qna() {
         initComponents();
         panelQna.setVisible(false);
+        
+    }
+    
+    public void Process(){
+        ShipName.setText(Ship[i]);
+        ShipName1.setText(Ship[i]);
+        ShipName2.setText(Ship[i]);
     }
 
     /**
@@ -29,67 +42,155 @@ public class Qna extends javax.swing.JFrame {
 
         labelQNA = new javax.swing.JLabel();
         panelQna = new javax.swing.JPanel();
-        radioButtonFrenchShip = new javax.swing.JRadioButton();
-        radioButtonGreekShip = new javax.swing.JRadioButton();
-        radioButtonBrazilionShip = new javax.swing.JRadioButton();
-        radioButtonEnglishShip = new javax.swing.JRadioButton();
-        radioButtonSpanishShip = new javax.swing.JRadioButton();
+        jPanel2 = new javax.swing.JPanel();
+        InfoLabel = new javax.swing.JLabel();
+        ContentButton = new javax.swing.JRadioButton();
+        ShipButton = new javax.swing.JRadioButton();
+        RightButton = new javax.swing.JRadioButton();
+        LeftButton = new javax.swing.JRadioButton();
+        Content1Button = new javax.swing.JRadioButton();
+        ShipName = new javax.swing.JLabel();
+        ShipName1 = new javax.swing.JLabel();
+        ShipName2 = new javax.swing.JLabel();
+        ShipName4 = new javax.swing.JLabel();
+        ButtonFrench = new javax.swing.JRadioButton();
+        ButtonGreek = new javax.swing.JRadioButton();
+        ButtonBrazilian = new javax.swing.JRadioButton();
+        ButtonEnglish = new javax.swing.JRadioButton();
+        ButtonSpanish = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 204, 255));
 
         labelQNA.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelQNA.setText("Q & A");
+        labelQNA.setText("Ship Information");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(InfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        ContentButton.setText("Content of the");
+        ContentButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContentButtonActionPerformed(evt);
+            }
+        });
+
+        ShipButton.setText("The name of the ship");
+
+        RightButton.setText("To the right of ");
+
+        LeftButton.setText("To the left of");
+
+        Content1Button.setText("Content of");
 
         javax.swing.GroupLayout panelQnaLayout = new javax.swing.GroupLayout(panelQna);
         panelQna.setLayout(panelQnaLayout);
         panelQnaLayout.setHorizontalGroup(
             panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelQnaLayout.createSequentialGroup()
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ShipButton)
+                    .addGroup(panelQnaLayout.createSequentialGroup()
+                        .addComponent(ContentButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ShipName, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelQnaLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(panelQnaLayout.createSequentialGroup()
+                                .addComponent(LeftButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ShipName2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(panelQnaLayout.createSequentialGroup()
+                                .addComponent(RightButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ShipName1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(panelQnaLayout.createSequentialGroup()
+                                .addComponent(Content1Button)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ShipName4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelQnaLayout.setVerticalGroup(
             panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelQnaLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelQnaLayout.createSequentialGroup()
+                        .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ContentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ShipName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(ShipButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RightButton))
+                    .addComponent(ShipName1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LeftButton)
+                    .addComponent(ShipName2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Content1Button)
+                    .addComponent(ShipName4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        radioButtonFrenchShip.setText("French Ship");
-        radioButtonFrenchShip.addActionListener(new java.awt.event.ActionListener() {
+        ButtonFrench.setText("French Ship");
+        ButtonFrench.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioButtonFrenchShipActionPerformed(evt);
+                ButtonFrenchActionPerformed(evt);
             }
         });
 
-        radioButtonGreekShip.setText("Greek Ship");
-        radioButtonGreekShip.addActionListener(new java.awt.event.ActionListener() {
+        ButtonGreek.setText("Greek Ship");
+        ButtonGreek.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioButtonGreekShipActionPerformed(evt);
+                ButtonGreekActionPerformed(evt);
             }
         });
 
-        radioButtonBrazilionShip.setText("Brazilion Ship");
-        radioButtonBrazilionShip.addActionListener(new java.awt.event.ActionListener() {
+        ButtonBrazilian.setText("Brazilian Ship");
+        ButtonBrazilian.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioButtonBrazilionShipActionPerformed(evt);
+                ButtonBrazilianActionPerformed(evt);
             }
         });
 
-        radioButtonEnglishShip.setText("English Ship");
-        radioButtonEnglishShip.addActionListener(new java.awt.event.ActionListener() {
+        ButtonEnglish.setText("English Ship");
+        ButtonEnglish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioButtonEnglishShipActionPerformed(evt);
+                ButtonEnglishActionPerformed(evt);
             }
         });
 
-        radioButtonSpanishShip.setText("Spanish Ship");
-        radioButtonSpanishShip.addActionListener(new java.awt.event.ActionListener() {
+        ButtonSpanish.setText("Spanish Ship");
+        ButtonSpanish.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radioButtonSpanishShipActionPerformed(evt);
+                ButtonSpanishActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Please select a ship.");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setText("Select a ship.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,75 +200,108 @@ public class Qna extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(panelQna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(242, 242, 242)
-                                .addComponent(labelQNA))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(radioButtonFrenchShip)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(radioButtonGreekShip)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(radioButtonBrazilionShip)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(radioButtonEnglishShip)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(radioButtonSpanishShip))
-                                    .addComponent(jLabel1))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(ButtonFrench)
+                                .addGap(18, 18, 18)
+                                .addComponent(ButtonGreek)
+                                .addGap(18, 18, 18)
+                                .addComponent(ButtonBrazilian)
+                                .addGap(18, 18, 18)
+                                .addComponent(ButtonEnglish)
+                                .addGap(18, 18, 18)
+                                .addComponent(ButtonSpanish))
+                            .addComponent(jLabel1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(183, 183, 183)
+                        .addComponent(labelQNA))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelQNA)
-                .addGap(10, 10, 10)
+                .addGap(15, 15, 15)
+                .addComponent(labelQNA, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioButtonFrenchShip)
-                    .addComponent(radioButtonGreekShip)
-                    .addComponent(radioButtonBrazilionShip)
-                    .addComponent(radioButtonEnglishShip)
-                    .addComponent(radioButtonSpanishShip))
-                .addGap(17, 17, 17)
-                .addComponent(panelQna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                    .addComponent(ButtonFrench)
+                    .addComponent(ButtonGreek)
+                    .addComponent(ButtonBrazilian)
+                    .addComponent(ButtonEnglish)
+                    .addComponent(ButtonSpanish))
+                .addGap(18, 18, 18)
+                .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void radioButtonFrenchShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonFrenchShipActionPerformed
+    private void ButtonFrenchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFrenchActionPerformed
         panelQna.setVisible(true);
-        
-    }//GEN-LAST:event_radioButtonFrenchShipActionPerformed
+        ButtonGreek.setSelected(false);
+        ButtonEnglish.setSelected(false);
+        ButtonBrazilian.setSelected(false);
+        ButtonSpanish.setSelected(false);
+        ButtonFrench.setSelected(true);
+        i=0;
+        Process();
+    }//GEN-LAST:event_ButtonFrenchActionPerformed
 
-    private void radioButtonGreekShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonGreekShipActionPerformed
-        // TODO add your handling code here:
-        radioButtonGreekShip.setSelected(false); // buat option lain tk boleh click
-    }//GEN-LAST:event_radioButtonGreekShipActionPerformed
+    private void ButtonGreekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGreekActionPerformed
+        panelQna.setVisible(true);
+        ButtonGreek.setSelected(true);
+        ButtonEnglish.setSelected(false);
+        ButtonBrazilian.setSelected(false);
+        ButtonSpanish.setSelected(false);
+        ButtonFrench.setSelected(false);
+        i=1;
+        Process();
+    }//GEN-LAST:event_ButtonGreekActionPerformed
 
-    private void radioButtonBrazilionShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonBrazilionShipActionPerformed
-        // TODO add your handling code here:
-        radioButtonBrazilionShip.setSelected(false);
-    }//GEN-LAST:event_radioButtonBrazilionShipActionPerformed
+    private void ButtonBrazilianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBrazilianActionPerformed
+        panelQna.setVisible(true);
+        ButtonGreek.setSelected(false);
+        ButtonEnglish.setSelected(false);
+        ButtonBrazilian.setSelected(true);
+        ButtonSpanish.setSelected(false);
+        ButtonFrench.setSelected(false);
+        i=2;
+        Process();
+    }//GEN-LAST:event_ButtonBrazilianActionPerformed
 
-    private void radioButtonEnglishShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonEnglishShipActionPerformed
-        // TODO add your handling code here:
-        radioButtonEnglishShip.setSelected(false);
-    }//GEN-LAST:event_radioButtonEnglishShipActionPerformed
+    private void ButtonEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEnglishActionPerformed
+        panelQna.setVisible(true);
+        ButtonGreek.setSelected(false);
+        ButtonEnglish.setSelected(true);
+        ButtonBrazilian.setSelected(false);
+        ButtonSpanish.setSelected(false);
+        ButtonFrench.setSelected(false);
+        i=3;
+        Process();
+    }//GEN-LAST:event_ButtonEnglishActionPerformed
 
-    private void radioButtonSpanishShipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioButtonSpanishShipActionPerformed
-        // TODO add your handling code here:
-        radioButtonSpanishShip.setSelected(false);
-    }//GEN-LAST:event_radioButtonSpanishShipActionPerformed
+    private void ButtonSpanishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSpanishActionPerformed
+        panelQna.setVisible(true);
+        ButtonGreek.setSelected(false);
+        ButtonEnglish.setSelected(false);
+        ButtonBrazilian.setSelected(false);
+        ButtonSpanish.setSelected(true);
+        ButtonFrench.setSelected(false);
+        i=4;
+        Process();
+    }//GEN-LAST:event_ButtonSpanishActionPerformed
+
+    private void ContentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContentButtonActionPerformed
+        InfoLabel.setText("Ship's Name: "+Ship[i]+" "+Chimney[i]+" Chimney\n Content of the Ship: "+Content[i]+
+                          "\nDestination: "+Destination[i]+"\nTime of Arrival: "+Arrive[i]+
+                          " ");
+    }//GEN-LAST:event_ContentButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,13 +309,24 @@ public class Qna extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton ButtonBrazilian;
+    private javax.swing.JRadioButton ButtonEnglish;
+    private javax.swing.JRadioButton ButtonFrench;
+    private javax.swing.JRadioButton ButtonGreek;
+    private javax.swing.JRadioButton ButtonSpanish;
+    private javax.swing.JRadioButton Content1Button;
+    private javax.swing.JRadioButton ContentButton;
+    private javax.swing.JLabel InfoLabel;
+    private javax.swing.JRadioButton LeftButton;
+    private javax.swing.JRadioButton RightButton;
+    private javax.swing.JRadioButton ShipButton;
+    private javax.swing.JLabel ShipName;
+    private javax.swing.JLabel ShipName1;
+    private javax.swing.JLabel ShipName2;
+    private javax.swing.JLabel ShipName4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelQNA;
     private javax.swing.JPanel panelQna;
-    private javax.swing.JRadioButton radioButtonBrazilionShip;
-    private javax.swing.JRadioButton radioButtonEnglishShip;
-    private javax.swing.JRadioButton radioButtonFrenchShip;
-    private javax.swing.JRadioButton radioButtonGreekShip;
-    private javax.swing.JRadioButton radioButtonSpanishShip;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,19 +6,14 @@
 
 /**
  *
- * @author Faiz Ikhwann
+ * @author Shah
  */
-import java.util.*;
-import javax.swing.*;
-import javax.*;
-
-public class MainMenu extends javax.swing.JDialog {
+public class MainMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form MainMenu
      */
-    public MainMenu(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public MainMenu() {
         initComponents();
     }
 
@@ -31,27 +26,33 @@ public class MainMenu extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelTitle = new javax.swing.JLabel();
-        buttonQNA = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        ShipInfo = new javax.swing.JButton();
         ShipGraphic = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        buttonCredit = new javax.swing.JButton();
-        toggleButtonSound = new javax.swing.JToggleButton();
+        ShipSudoku = new javax.swing.JButton();
+        ShipShuffle = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTitle.setText("Title");
+        jPanel1.setLayout(null);
 
-        buttonQNA.setText("Ship Information");
-        buttonQNA.setToolTipText("");
-        buttonQNA.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Trading Ship Puzzle");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(60, 10, 155, 22);
+
+        ShipInfo.setText("Ship Information");
+        ShipInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonQNAActionPerformed(evt);
+                ShipInfoActionPerformed(evt);
             }
         });
+        jPanel1.add(ShipInfo);
+        ShipInfo.setBounds(60, 100, 160, 23);
 
         ShipGraphic.setText("See The Ship");
         ShipGraphic.addActionListener(new java.awt.event.ActionListener() {
@@ -59,90 +60,62 @@ public class MainMenu extends javax.swing.JDialog {
                 ShipGraphicActionPerformed(evt);
             }
         });
+        jPanel1.add(ShipGraphic);
+        ShipGraphic.setBounds(60, 160, 160, 23);
 
-        jButton3.setText("jButton3");
+        ShipSudoku.setText("Shidoku");
+        jPanel1.add(ShipSudoku);
+        ShipSudoku.setBounds(60, 290, 160, 23);
 
-        jButton4.setText("jButton4");
+        ShipShuffle.setText("Shuffle The Ship");
+        jPanel1.add(ShipShuffle);
+        ShipShuffle.setBounds(60, 230, 160, 23);
 
-        buttonCredit.setText("Credit");
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sound-in-circular-button.png"))); // NOI18N
+        jPanel1.add(jButton5);
+        jButton5.setBounds(240, 410, 40, 41);
 
-        toggleButtonSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundOn1.png"))); // NOI18N
-        toggleButtonSound.setToolTipText("");
-        toggleButtonSound.setActionCommand("Sound off");
-        toggleButtonSound.setMaximumSize(new java.awt.Dimension(50, 50));
-        toggleButtonSound.setMinimumSize(new java.awt.Dimension(50, 50));
-        toggleButtonSound.setPreferredSize(new java.awt.Dimension(50, 50));
-        toggleButtonSound.addActionListener(new java.awt.event.ActionListener() {
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Credit.png"))); // NOI18N
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                toggleButtonSoundActionPerformed(evt);
+                jButton6ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton6);
+        jButton6.setBounds(0, 410, 40, 41);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ocean.gif"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(-10, 0, 290, 450);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(buttonCredit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(toggleButtonSound, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(186, 186, 186)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(buttonQNA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ShipGraphic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(153, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(buttonQNA)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ShipGraphic)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonCredit, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(toggleButtonSound, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void toggleButtonSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleButtonSoundActionPerformed
-
-        /*if(toggleButtonSound.isSelected())
-        {
-            toggleButtonSound.setIcon(new imageIcon(getClass().getResource("/soundOff.png")));
-        }
-        else
-        {
-            toggleButtonSound.setIcon(new imageIcon(getClass().getResource("/soundOn.png")));
-        } */
-    }//GEN-LAST:event_toggleButtonSoundActionPerformed
-
-    private void buttonQNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonQNAActionPerformed
+    private void ShipInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipInfoActionPerformed
         new Qna().setVisible(true);
         dispose();
-        
-    }//GEN-LAST:event_buttonQNAActionPerformed
+    }//GEN-LAST:event_ShipInfoActionPerformed
 
     private void ShipGraphicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipGraphicActionPerformed
-       new GraphicalShip().setVisible(true);
-       dispose();
+        new GraphicalShip().setVisible(true);
     }//GEN-LAST:event_ShipGraphicActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+       new Credit().setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,28 +144,23 @@ public class MainMenu extends javax.swing.JDialog {
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                MainMenu dialog = new MainMenu(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
+                new MainMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ShipGraphic;
-    private javax.swing.JButton buttonCredit;
-    private javax.swing.JButton buttonQNA;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel labelTitle;
-    private javax.swing.JToggleButton toggleButtonSound;
+    private javax.swing.JButton ShipInfo;
+    private javax.swing.JButton ShipShuffle;
+    private javax.swing.JButton ShipSudoku;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
