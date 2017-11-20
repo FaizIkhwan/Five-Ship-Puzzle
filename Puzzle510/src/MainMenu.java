@@ -33,7 +33,7 @@ public class MainMenu extends javax.swing.JDialog {
 
         labelTitle = new javax.swing.JLabel();
         buttonQNA = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        ShipGraphic = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         buttonCredit = new javax.swing.JButton();
@@ -45,7 +45,7 @@ public class MainMenu extends javax.swing.JDialog {
         labelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelTitle.setText("Title");
 
-        buttonQNA.setText("Q & A");
+        buttonQNA.setText("Ship Information");
         buttonQNA.setToolTipText("");
         buttonQNA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,10 +53,10 @@ public class MainMenu extends javax.swing.JDialog {
             }
         });
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ShipGraphic.setText("See The Ship");
+        ShipGraphic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ShipGraphicActionPerformed(evt);
             }
         });
 
@@ -93,10 +93,10 @@ public class MainMenu extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(buttonQNA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ShipGraphic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,7 +106,7 @@ public class MainMenu extends javax.swing.JDialog {
                 .addGap(44, 44, 44)
                 .addComponent(buttonQNA)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2)
+                .addComponent(ShipGraphic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,9 +139,10 @@ public class MainMenu extends javax.swing.JDialog {
         
     }//GEN-LAST:event_buttonQNAActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void ShipGraphicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipGraphicActionPerformed
+       new GraphicalShip().setVisible(true);
+       dispose();
+    }//GEN-LAST:event_ShipGraphicActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,9 +187,9 @@ public class MainMenu extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ShipGraphic;
     private javax.swing.JButton buttonCredit;
     private javax.swing.JButton buttonQNA;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel labelTitle;
