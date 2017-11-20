@@ -1,3 +1,6 @@
+
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,31 +9,32 @@
 
 /**
  *
- * @author Faiz Ikhwann
+ * @author Shah
  */
 public class Qna extends javax.swing.JFrame {
 
-    public String[] Ship={"French Ship","Greek Ship","Brazilian Ship","English Ship","Spanish Ship"};
-    public double[] Arrive={5.00,6.00,8.00,9.00,7.00};
+    public String[] Ship={"French Ship","Greek Ship","Brazilian Ship",
+                          "English Ship","Spanish Ship"};
     public String[] Content={"Tea","Coffee","Cocoa","Rice","Corn"};
+    public String[] Arrival={"5.00am","6.00pm","8.00pm","9.00pm","7.00pm"};
     public String[] Chimney={"Blue","Red","Black","White","Green"};
     public String[] Destination={"Genoa","Hamburg","Manila","Marseille","Port Said"};
+    public String[] Picture={"FrenchShip.png","GreekShip.png","BrazilianShip.png",
+                             "EnglishShip.png","SpanishShip.png"};
     
-    int i;
-    
+    public int i;
     
     public Qna() {
         initComponents();
-        panelQna.setVisible(false);
-        
+        InfoPanel.setVisible(false);
     }
-    
-    public void Process(){
+   
+    public void Process(){ 
         ShipName.setText(Ship[i]);
         ShipName1.setText(Ship[i]);
         ShipName2.setText(Ship[i]);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,233 +44,223 @@ public class Qna extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panelQna = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        FrenchButton = new javax.swing.JRadioButton();
+        GreekButton = new javax.swing.JRadioButton();
+        BrazilianButton = new javax.swing.JRadioButton();
+        EnglishButton = new javax.swing.JRadioButton();
+        SpanishButton = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
+        InfoPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        NameLabel = new javax.swing.JLabel();
-        ContentLabel = new javax.swing.JLabel();
-        DestLabel = new javax.swing.JLabel();
-        ArriveLabel = new javax.swing.JLabel();
+        ShipInfo = new javax.swing.JLabel();
+        ContentInfo = new javax.swing.JLabel();
+        DestinationInfo = new javax.swing.JLabel();
+        ArriveInfo = new javax.swing.JLabel();
+        PicInfo = new javax.swing.JLabel();
         ContentButton = new javax.swing.JRadioButton();
+        ShipName = new javax.swing.JLabel();
         ShipButton = new javax.swing.JRadioButton();
         RightButton = new javax.swing.JRadioButton();
-        LeftButton = new javax.swing.JRadioButton();
-        Content1Button = new javax.swing.JRadioButton();
-        ShipName = new javax.swing.JLabel();
         ShipName1 = new javax.swing.JLabel();
+        LeftButton = new javax.swing.JRadioButton();
         ShipName2 = new javax.swing.JLabel();
-        ShipName4 = new javax.swing.JLabel();
-        ButtonFrench = new javax.swing.JRadioButton();
-        ButtonGreek = new javax.swing.JRadioButton();
-        ButtonBrazilian = new javax.swing.JRadioButton();
-        ButtonEnglish = new javax.swing.JRadioButton();
-        ButtonSpanish = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        labelQNA = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        menuExit = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        menuSoundOption = new javax.swing.JMenu();
-        menuSoundOn = new javax.swing.JMenuItem();
-        menuSoundOff = new javax.swing.JMenuItem();
+        ContainedButton = new javax.swing.JRadioButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 204, 255));
-        setPreferredSize(new java.awt.Dimension(470, 561));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Ship Information");
+
+        jLabel2.setText("Select a ship you wish to acquire information");
+
+        FrenchButton.setText("French Ship");
+        FrenchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FrenchButtonActionPerformed(evt);
+            }
+        });
+
+        GreekButton.setText("Greek Ship");
+        GreekButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GreekButtonActionPerformed(evt);
+            }
+        });
+
+        BrazilianButton.setText("Brazilian Ship");
+        BrazilianButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BrazilianButtonActionPerformed(evt);
+            }
+        });
+
+        EnglishButton.setText("English Ship");
+        EnglishButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnglishButtonActionPerformed(evt);
+            }
+        });
+
+        SpanishButton.setText("Spanish");
+        SpanishButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SpanishButtonActionPerformed(evt);
+            }
+        });
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        InfoPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        PicInfo.setMaximumSize(new java.awt.Dimension(150, 118));
+        PicInfo.setPreferredSize(new java.awt.Dimension(150, 118));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(23, 23, 23)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DestLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ContentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ArriveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(169, Short.MAX_VALUE))
-=======
-                .addGap(170, 170, 170)
-                .addComponent(InfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(PicInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ShipInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ContentInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DestinationInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ArriveInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
->>>>>>> 0a2a90617f65764f40450c8e9d78dbdaaee9234a
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(64, 64, 64)
-                .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(PicInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ContentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ShipInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DestLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ContentInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ArriveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
-                .addGap(51, 51, 51)
-                .addComponent(InfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 0a2a90617f65764f40450c8e9d78dbdaaee9234a
+                .addComponent(ArriveInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DestinationInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        ContentButton.setText("Content of the");
+        ContentButton.setText("The info of");
         ContentButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ContentButtonActionPerformed(evt);
             }
         });
 
-        ShipButton.setText("The name of the ship");
+        ShipButton.setText("The ship");
+        ShipButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShipButtonActionPerformed(evt);
+            }
+        });
 
-        RightButton.setText("To the right of ");
+        RightButton.setText("To the right of");
+        RightButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RightButtonActionPerformed(evt);
+            }
+        });
 
         LeftButton.setText("To the left of");
+        LeftButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeftButtonActionPerformed(evt);
+            }
+        });
 
-        Content1Button.setText("Content of");
+        ContainedButton.setText("Contained");
+        ContainedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContainedButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout panelQnaLayout = new javax.swing.GroupLayout(panelQna);
-        panelQna.setLayout(panelQnaLayout);
-        panelQnaLayout.setHorizontalGroup(
-            panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelQnaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ShipButton)
-                    .addGroup(panelQnaLayout.createSequentialGroup()
+        jRadioButton1.setText("Headed to");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout InfoPanelLayout = new javax.swing.GroupLayout(InfoPanel);
+        InfoPanel.setLayout(InfoPanelLayout);
+        InfoPanelLayout.setHorizontalGroup(
+            InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(InfoPanelLayout.createSequentialGroup()
                         .addComponent(ContentButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ShipName, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelQnaLayout.createSequentialGroup()
+                        .addComponent(ShipName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(InfoPanelLayout.createSequentialGroup()
+                        .addComponent(ShipButton)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(InfoPanelLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(panelQnaLayout.createSequentialGroup()
+                        .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(InfoPanelLayout.createSequentialGroup()
                                 .addComponent(LeftButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ShipName2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(panelQnaLayout.createSequentialGroup()
+                            .addGroup(InfoPanelLayout.createSequentialGroup()
                                 .addComponent(RightButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ShipName1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelQnaLayout.createSequentialGroup()
-                                .addComponent(Content1Button)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ShipName4, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(ShipName1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(InfoPanelLayout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton1)
+                                    .addComponent(ContainedButton))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        panelQnaLayout.setVerticalGroup(
-            panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        InfoPanelLayout.setVerticalGroup(
+            InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(panelQnaLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panelQnaLayout.createSequentialGroup()
-                        .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ContentButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ShipName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(ShipButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RightButton))
-                    .addComponent(ShipName1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InfoPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ContentButton)
+                    .addComponent(ShipName, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(ShipButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RightButton)
+                    .addComponent(ShipName1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LeftButton)
                     .addComponent(ShipName2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Content1Button)
-                    .addComponent(ShipName4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addComponent(ContainedButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton1)
+                .addGap(32, 32, 32))
         );
 
-        ButtonFrench.setText("French Ship");
-        ButtonFrench.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Show Me The Ship");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonFrenchActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-
-        ButtonGreek.setText("Greek Ship");
-        ButtonGreek.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonGreekActionPerformed(evt);
-            }
-        });
-
-        ButtonBrazilian.setText("Brazilian Ship");
-        ButtonBrazilian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonBrazilianActionPerformed(evt);
-            }
-        });
-
-        ButtonEnglish.setText("English Ship");
-        ButtonEnglish.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonEnglishActionPerformed(evt);
-            }
-        });
-
-        ButtonSpanish.setText("Spanish Ship");
-        ButtonSpanish.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSpanishActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Select a ship.");
-
-        jPanel1.setBackground(new java.awt.Color(153, 255, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(348, 66));
-
-        labelQNA.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        labelQNA.setText("Ship Information");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(labelQNA)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelQNA, javax.swing.GroupLayout.PREFERRED_SIZE, 36, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
-        );
-
-        jMenu1.setText("File");
-
-        menuExit.setText("Exit");
-        jMenu1.add(menuExit);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Option");
-
-        menuSoundOption.setText("Sound");
-
-        menuSoundOn.setText("Sound On");
-        menuSoundOption.add(menuSoundOn);
-
-        menuSoundOff.setText("Sound Off");
-        menuSoundOption.add(menuSoundOff);
-
-        jMenu2.add(menuSoundOption);
-
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -277,144 +271,236 @@ public class Qna extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(InfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(ButtonFrench)
-                                .addGap(18, 18, 18)
-                                .addComponent(ButtonGreek)
-                                .addGap(18, 18, 18)
-                                .addComponent(ButtonBrazilian)
-                                .addGap(18, 18, 18)
-                                .addComponent(ButtonEnglish)
-                                .addGap(18, 18, 18)
-                                .addComponent(ButtonSpanish))
-                            .addComponent(jLabel1)))
+                                .addComponent(FrenchButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BrazilianButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SpanishButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(GreekButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(EnglishButton)
+                                .addGap(0, 20, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-<<<<<<< HEAD
-=======
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
->>>>>>> 0a2a90617f65764f40450c8e9d78dbdaaee9234a
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(133, 133, 133)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(89, 89, 89)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ButtonFrench)
-                    .addComponent(ButtonGreek)
-                    .addComponent(ButtonBrazilian)
-                    .addComponent(ButtonEnglish)
-                    .addComponent(ButtonSpanish))
-                .addGap(26, 26, 26)
-                .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(FrenchButton)
+                    .addComponent(BrazilianButton)
+                    .addComponent(EnglishButton)
+                    .addComponent(SpanishButton)
+                    .addComponent(GreekButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(InfoPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ButtonFrenchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonFrenchActionPerformed
-        panelQna.setVisible(true);
-        ButtonGreek.setSelected(false);
-        ButtonEnglish.setSelected(false);
-        ButtonBrazilian.setSelected(false);
-        ButtonSpanish.setSelected(false);
-        ButtonFrench.setSelected(true);
+    private void FrenchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrenchButtonActionPerformed
+        FrenchButton.setSelected(true);
+        GreekButton.setSelected(false);
+        BrazilianButton.setSelected(false);
+        EnglishButton.setSelected(false);
+        SpanishButton.setSelected(false);
+        InfoPanel.setVisible(true);
         i=0;
         Process();
-    }//GEN-LAST:event_ButtonFrenchActionPerformed
+    }//GEN-LAST:event_FrenchButtonActionPerformed
 
-    private void ButtonGreekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonGreekActionPerformed
-        panelQna.setVisible(true);
-        ButtonGreek.setSelected(true);
-        ButtonEnglish.setSelected(false);
-        ButtonBrazilian.setSelected(false);
-        ButtonSpanish.setSelected(false);
-        ButtonFrench.setSelected(false);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void GreekButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GreekButtonActionPerformed
+        FrenchButton.setSelected(false);
+        GreekButton.setSelected(true);
+        BrazilianButton.setSelected(false);
+        EnglishButton.setSelected(false);
+        SpanishButton.setSelected(false);
+        InfoPanel.setVisible(true);
         i=1;
         Process();
-    }//GEN-LAST:event_ButtonGreekActionPerformed
+    }//GEN-LAST:event_GreekButtonActionPerformed
 
-    private void ButtonBrazilianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonBrazilianActionPerformed
-        panelQna.setVisible(true);
-        ButtonGreek.setSelected(false);
-        ButtonEnglish.setSelected(false);
-        ButtonBrazilian.setSelected(true);
-        ButtonSpanish.setSelected(false);
-        ButtonFrench.setSelected(false);
+    private void BrazilianButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrazilianButtonActionPerformed
+        FrenchButton.setSelected(false);
+        GreekButton.setSelected(false);
+        BrazilianButton.setSelected(true);
+        EnglishButton.setSelected(false);
+        SpanishButton.setSelected(false);
+        InfoPanel.setVisible(true);
         i=2;
         Process();
-    }//GEN-LAST:event_ButtonBrazilianActionPerformed
+    }//GEN-LAST:event_BrazilianButtonActionPerformed
 
-    private void ButtonEnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEnglishActionPerformed
-        panelQna.setVisible(true);
-        ButtonGreek.setSelected(false);
-        ButtonEnglish.setSelected(true);
-        ButtonBrazilian.setSelected(false);
-        ButtonSpanish.setSelected(false);
-        ButtonFrench.setSelected(false);
+    private void EnglishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnglishButtonActionPerformed
+        FrenchButton.setSelected(false);
+        GreekButton.setSelected(false);
+        BrazilianButton.setSelected(false);
+        EnglishButton.setSelected(true);
+        SpanishButton.setSelected(false);
+        InfoPanel.setVisible(true);
         i=3;
         Process();
-    }//GEN-LAST:event_ButtonEnglishActionPerformed
+    }//GEN-LAST:event_EnglishButtonActionPerformed
 
-    private void ButtonSpanishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSpanishActionPerformed
-        panelQna.setVisible(true);
-        ButtonGreek.setSelected(false);
-        ButtonEnglish.setSelected(false);
-        ButtonBrazilian.setSelected(false);
-        ButtonSpanish.setSelected(true);
-        ButtonFrench.setSelected(false);
+    private void SpanishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SpanishButtonActionPerformed
+        FrenchButton.setSelected(false);
+        GreekButton.setSelected(false);
+        BrazilianButton.setSelected(false);
+        EnglishButton.setSelected(false);
+        SpanishButton.setSelected(true);
+        InfoPanel.setVisible(true);
         i=4;
         Process();
-    }//GEN-LAST:event_ButtonSpanishActionPerformed
+    }//GEN-LAST:event_SpanishButtonActionPerformed
+
+    private void ShipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipButtonActionPerformed
+        ContentButton.setSelected(false);
+        if(i==0)
+            LeftButton.setEnabled(false);
+        else if(i==4)
+            RightButton.setEnabled(false);
+        else{
+            LeftButton.setEnabled(true);
+            RightButton.setEnabled(true);
+        }
+    }//GEN-LAST:event_ShipButtonActionPerformed
 
     private void ContentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContentButtonActionPerformed
-        NameLabel.setText("Ship's Name: "+Ship[i]+" "+Chimney[i]+" Chimney");
-        ContentLabel.setText("Content of the Ship: "+Content[i]);
-        DestLabel.setText("Destination: "+Destination[i]);
-        ArriveLabel.setText("Time of Arrival: "+Arrive[i]);
+        ShipButton.setSelected(false);
+        RightButton.setSelected(false);
+        LeftButton.setSelected(false);
+        ContainedButton.setSelected(false);
+        ShipInfo.setText("Ship's name: "+Ship[i]+" with "+Chimney[i]+" chimney");
+        ContentInfo.setText("Content: "+Content[i]);
+        ArriveInfo.setText("Arrival Time: "+Arrival[i]);
+        DestinationInfo.setText("Destination: "+Destination[i]);
+      
     }//GEN-LAST:event_ContentButtonActionPerformed
+
+    private void RightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RightButtonActionPerformed
+        LeftButton.setSelected(false);
+        ContainedButton.setSelected(false);
+        i++;
+        ShipInfo.setText("Ship's Name: "+Ship[i]+" with "+Chimney[i]+" chimney");
+        ContentInfo.setVisible(false);
+        ArriveInfo.setVisible(false);
+        DestinationInfo.setVisible(false);
+    }//GEN-LAST:event_RightButtonActionPerformed
+
+    private void LeftButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeftButtonActionPerformed
+        RightButton.setSelected(false);
+        ContainedButton.setSelected(false);
+        i--;
+        ShipInfo.setText("Ship's Name: "+Ship[i]+" with "+Chimney[i]+" chimney");
+        ContentInfo.setVisible(false);
+        ArriveInfo.setVisible(false);
+        DestinationInfo.setVisible(false);
+    }//GEN-LAST:event_LeftButtonActionPerformed
+
+    private void ContainedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContainedButtonActionPerformed
+        ContentInfo.setVisible(true);
+        ContentInfo.setText(Content[i]);
+    }//GEN-LAST:event_ContainedButtonActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        DestinationInfo.setVisible(true);
+        DestinationInfo.setText(Destination[i]);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new GraphicalShip().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Qna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Qna().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ArriveLabel;
-    private javax.swing.JRadioButton ButtonBrazilian;
-    private javax.swing.JRadioButton ButtonEnglish;
-    private javax.swing.JRadioButton ButtonFrench;
-    private javax.swing.JRadioButton ButtonGreek;
-    private javax.swing.JRadioButton ButtonSpanish;
-    private javax.swing.JRadioButton Content1Button;
+    private javax.swing.JLabel ArriveInfo;
+    private javax.swing.JRadioButton BrazilianButton;
+    private javax.swing.JRadioButton ContainedButton;
     private javax.swing.JRadioButton ContentButton;
-    private javax.swing.JLabel ContentLabel;
-    private javax.swing.JLabel DestLabel;
+    private javax.swing.JLabel ContentInfo;
+    private javax.swing.JLabel DestinationInfo;
+    private javax.swing.JRadioButton EnglishButton;
+    private javax.swing.JRadioButton FrenchButton;
+    private javax.swing.JRadioButton GreekButton;
+    private javax.swing.JPanel InfoPanel;
     private javax.swing.JRadioButton LeftButton;
-    private javax.swing.JLabel NameLabel;
+    private javax.swing.JLabel PicInfo;
     private javax.swing.JRadioButton RightButton;
     private javax.swing.JRadioButton ShipButton;
+    private javax.swing.JLabel ShipInfo;
     private javax.swing.JLabel ShipName;
     private javax.swing.JLabel ShipName1;
     private javax.swing.JLabel ShipName2;
-    private javax.swing.JLabel ShipName4;
+    private javax.swing.JRadioButton SpanishButton;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel labelQNA;
-    private javax.swing.JMenuItem menuExit;
-    private javax.swing.JMenuItem menuSoundOff;
-    private javax.swing.JMenuItem menuSoundOn;
-    private javax.swing.JMenu menuSoundOption;
-    private javax.swing.JPanel panelQna;
+    private javax.swing.JRadioButton jRadioButton1;
     // End of variables declaration//GEN-END:variables
 }

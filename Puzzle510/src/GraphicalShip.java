@@ -1,3 +1,6 @@
+
+import java.awt.Color;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +18,7 @@ public class GraphicalShip extends javax.swing.JFrame {
      */
     public GraphicalShip() {
         initComponents();
-        jLabel3.setOpaque(false);
+        
     }
 
     /**
@@ -58,9 +61,9 @@ public class GraphicalShip extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/brazilian-ship.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SpanishShip.png"))); // NOI18N
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(40, 390, 150, 110);
+        jLabel3.setBounds(30, 380, 150, 110);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ocean.gif"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
