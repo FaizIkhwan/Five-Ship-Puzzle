@@ -28,6 +28,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         ShipInfo = new javax.swing.JButton();
         ShipGraphic = new javax.swing.JButton();
         ShipSudoku = new javax.swing.JButton();
@@ -44,6 +45,15 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setText("Trading Ship Puzzle");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(60, 10, 155, 22);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/off-circular-button-symbol.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(120, 410, 40, 40);
 
         ShipInfo.setText("Ship Information");
         ShipInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +73,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.add(ShipGraphic);
         ShipGraphic.setBounds(60, 160, 160, 23);
 
-        ShipSudoku.setText("Shidoku");
+        ShipSudoku.setText("Shipdoku");
         jPanel1.add(ShipSudoku);
         ShipSudoku.setBounds(60, 290, 160, 23);
 
@@ -117,6 +127,10 @@ public class MainMenu extends javax.swing.JFrame {
        new Credit().setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -157,6 +171,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton ShipInfo;
     private javax.swing.JButton ShipShuffle;
     private javax.swing.JButton ShipSudoku;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;

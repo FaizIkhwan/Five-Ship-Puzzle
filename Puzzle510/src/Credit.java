@@ -30,7 +30,6 @@ public class Credit extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         labelAbout = new javax.swing.JLabel();
         buttonMainMenu = new javax.swing.JButton();
-        buttonExit = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -45,7 +44,7 @@ public class Credit extends javax.swing.JFrame {
         setBackground(new java.awt.Color(102, 255, 204));
 
         labelDescription.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        labelDescription.setText("<html>Most popular puzzle game! Easy to play and pleasureable game for all age.<br>Easy to learn and fun to master gameplay. We really hope you enjoy it!<br><br><br>Version:<br>1.2<br>Updated on:<br>19 Nov 2017<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil</html>");
+        labelDescription.setText("<html>Most popular puzzle game! Easy to play and pleasureable game for all age.<br>Easy to learn and fun to master gameplay. We really hope you enjoy it!<br><br><br>Version:<br>1.2<br>Updated on:<br>19 Nov 2017<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon</html>");
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 204));
 
@@ -70,19 +69,10 @@ public class Credit extends javax.swing.JFrame {
         );
 
         buttonMainMenu.setBackground(new java.awt.Color(102, 255, 204));
-        buttonMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/homebutton (1).png"))); // NOI18N
+        buttonMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu.png"))); // NOI18N
         buttonMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMainMenuActionPerformed(evt);
-            }
-        });
-
-        buttonExit.setBackground(new java.awt.Color(102, 255, 204));
-        buttonExit.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        buttonExit.setText("Exit");
-        buttonExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonExitActionPerformed(evt);
             }
         });
 
@@ -134,9 +124,8 @@ public class Credit extends javax.swing.JFrame {
                         .addGap(158, 158, 158))
                     .addComponent(labelDescription)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(buttonExit)))
+                        .addComponent(buttonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -144,18 +133,17 @@ public class Credit extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(buttonMainMenu, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonExit, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(buttonMainMenu)
+                .addGap(1, 1, 1))
         );
 
         pack();
@@ -164,11 +152,6 @@ public class Credit extends javax.swing.JFrame {
     private void buttonMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMainMenuActionPerformed
         dispose();
     }//GEN-LAST:event_buttonMainMenuActionPerformed
-
-    private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_buttonExitActionPerformed
 
     private void menuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitActionPerformed
         // TODO add your handling code here:
@@ -181,7 +164,6 @@ public class Credit extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonExit;
     private javax.swing.JButton buttonMainMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
