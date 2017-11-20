@@ -43,7 +43,10 @@ public class Qna extends javax.swing.JFrame {
         labelQNA = new javax.swing.JLabel();
         panelQna = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        InfoLabel = new javax.swing.JLabel();
+        NameLabel = new javax.swing.JLabel();
+        ContentLabel = new javax.swing.JLabel();
+        DestLabel = new javax.swing.JLabel();
+        ArriveLabel = new javax.swing.JLabel();
         ContentButton = new javax.swing.JRadioButton();
         ShipButton = new javax.swing.JRadioButton();
         RightButton = new javax.swing.JRadioButton();
@@ -71,16 +74,26 @@ public class Qna extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(InfoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DestLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ContentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ArriveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(InfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ContentLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DestLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ArriveLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         ContentButton.setText("Content of the");
@@ -151,7 +164,7 @@ public class Qna extends javax.swing.JFrame {
                 .addGroup(panelQnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Content1Button)
                     .addComponent(ShipName4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         ButtonFrench.setText("French Ship");
@@ -218,7 +231,7 @@ public class Qna extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addComponent(panelQna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,9 +311,10 @@ public class Qna extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonSpanishActionPerformed
 
     private void ContentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContentButtonActionPerformed
-        InfoLabel.setText("Ship's Name: "+Ship[i]+" "+Chimney[i]+" Chimney\n Content of the Ship: "+Content[i]+
-                          "\nDestination: "+Destination[i]+"\nTime of Arrival: "+Arrive[i]+
-                          " ");
+        NameLabel.setText("Ship's Name: "+Ship[i]+" "+Chimney[i]+" Chimney");
+        ContentLabel.setText("Content of the Ship: "+Content[i]);
+        DestLabel.setText("Destination: "+Destination[i]);
+        ArriveLabel.setText("Time of Arrival: "+Arrive[i]);
     }//GEN-LAST:event_ContentButtonActionPerformed
 
     /**
@@ -309,6 +323,7 @@ public class Qna extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ArriveLabel;
     private javax.swing.JRadioButton ButtonBrazilian;
     private javax.swing.JRadioButton ButtonEnglish;
     private javax.swing.JRadioButton ButtonFrench;
@@ -316,8 +331,10 @@ public class Qna extends javax.swing.JFrame {
     private javax.swing.JRadioButton ButtonSpanish;
     private javax.swing.JRadioButton Content1Button;
     private javax.swing.JRadioButton ContentButton;
-    private javax.swing.JLabel InfoLabel;
+    private javax.swing.JLabel ContentLabel;
+    private javax.swing.JLabel DestLabel;
     private javax.swing.JRadioButton LeftButton;
+    private javax.swing.JLabel NameLabel;
     private javax.swing.JRadioButton RightButton;
     private javax.swing.JRadioButton ShipButton;
     private javax.swing.JLabel ShipName;
