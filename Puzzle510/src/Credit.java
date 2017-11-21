@@ -44,7 +44,7 @@ public class Credit extends javax.swing.JFrame {
         setBackground(new java.awt.Color(102, 255, 204));
 
         labelDescription.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        labelDescription.setText("<html>Most popular puzzle game! Easy to play and pleasureable game for all age.<br>Easy to learn and fun to master gameplay. We really hope you enjoy it!<br><br><br>Version:<br>1.2<br>Updated on:<br>19 Nov 2017<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon</html>");
+        labelDescription.setText("<html>Most popular puzzle game! Easy to play and pleasureable game for all age.<br>Easy to learn and fun to master gameplay. We really hope you enjoy it!<br><br><br>Version:<br>1.2<br>Updated on:<br>19 Nov 2017<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 204));
 
@@ -136,12 +136,11 @@ public class Credit extends javax.swing.JFrame {
                 .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(buttonMainMenu)
                 .addGap(1, 1, 1))
         );

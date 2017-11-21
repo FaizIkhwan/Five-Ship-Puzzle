@@ -46,7 +46,7 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(60, 10, 155, 22);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/off-circular-button-symbol.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Off.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

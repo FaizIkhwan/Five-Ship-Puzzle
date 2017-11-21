@@ -113,7 +113,7 @@ public class Qna extends javax.swing.JFrame {
             }
         });
 
-        SpanishButton.setText("Spanish");
+        SpanishButton.setText("Spanish Ship");
         SpanishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SpanishButtonActionPerformed(evt);
@@ -130,8 +130,6 @@ public class Qna extends javax.swing.JFrame {
         InfoPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         PicInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
-        PicInfo.setMaximumSize(new java.awt.Dimension(150, 118));
-        PicInfo.setPreferredSize(new java.awt.Dimension(150, 118));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -151,7 +149,7 @@ public class Qna extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(PicInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PicInfo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ShipInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -304,7 +302,7 @@ public class Qna extends javax.swing.JFrame {
                                 .addComponent(GreekButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(EnglishButton)
-                                .addGap(0, 61, Short.MAX_VALUE)))))
+                                .addGap(0, 39, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -421,6 +419,10 @@ public class Qna extends javax.swing.JFrame {
         ContainedButton.setSelected(false);
         Image();
         PicInfo.setVisible(true);
+        ShipInfo.setVisible(true);
+        ContentInfo.setVisible(true);
+        ArriveInfo.setVisible(true);
+        DestinationInfo.setVisible(true);
         ShipInfo.setText("Ship's name: "+Ship[i]+" with "+Chimney[i]+" chimney");
         ContentInfo.setText("Content: "+Content[i]);
         ArriveInfo.setText("Arrival Time: "+Arrival[i]);
