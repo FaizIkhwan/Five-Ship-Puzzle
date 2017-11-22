@@ -12,19 +12,10 @@ import javax.swing.ImageIcon;
  * @author Shah
  */
 public class Qna extends javax.swing.JFrame {
-
-    public String[] Ship={"French Ship","Greek Ship","Brazilian Ship",
-                          "English Ship","Spanish Ship"};
-    public String[] Content={"Tea","Coffee","Cocoa","Rice","Corn"};
-    public String[] Arrival={"5.00am","6.00pm","8.00pm","9.00pm","7.00pm"};
-    public String[] Chimney={"Blue","Red","Black","White","Green"};
-    public String[] Destination={"Genoa","Hamburg","Manila","Marseille","Port Said"};
-    public String[] Picture={"FrenchShip.png","GreekShip.png","BrazilianShip.png",
-                             "EnglishShip.png","SpanishShip.png"};
     
-    ImageIcon[] imagelist=new ImageIcon[6];
-    
-    public int i;
+    Data d= new Data();  
+    ImageIcon[] imagelist=new ImageIcon[5];
+    int i;
     
     public Qna() {
         initComponents();
@@ -33,13 +24,13 @@ public class Qna extends javax.swing.JFrame {
     }
    
     public void Process(){
-        ShipName.setText(Ship[i]);
-        ShipName1.setText(Ship[i]);
-        ShipName2.setText(Ship[i]);
+        ShipName.setText(d.Ship[i]);
+        ShipName1.setText(d.Ship[i]);
+        ShipName2.setText(d.Ship[i]);
     }
     
     public void Image(){
-        imagelist[i]=new ImageIcon(getClass().getResource("/"+Picture[i]));
+        imagelist[i]=new ImageIcon(getClass().getResource("/"+d.Picture[i]));
         PicInfo.setIcon(imagelist[i]);
     }
     
@@ -75,7 +66,7 @@ public class Qna extends javax.swing.JFrame {
         LeftButton = new javax.swing.JRadioButton();
         ShipName2 = new javax.swing.JLabel();
         ContainedButton = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        HeadedButton = new javax.swing.JRadioButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -196,10 +187,10 @@ public class Qna extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton1.setText("Headed to");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        HeadedButton.setText("Headed to");
+        HeadedButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                HeadedButtonActionPerformed(evt);
             }
         });
 
@@ -231,7 +222,7 @@ public class Qna extends javax.swing.JFrame {
                             .addGroup(InfoPanelLayout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addGroup(InfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton1)
+                                    .addComponent(HeadedButton)
                                     .addComponent(ContainedButton))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -258,7 +249,7 @@ public class Qna extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ContainedButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(HeadedButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -417,16 +408,17 @@ public class Qna extends javax.swing.JFrame {
         RightButton.setSelected(false);
         LeftButton.setSelected(false);
         ContainedButton.setSelected(false);
+        HeadedButton.setSelected(false);
         Image();
         PicInfo.setVisible(true);
         ShipInfo.setVisible(true);
         ContentInfo.setVisible(true);
         ArriveInfo.setVisible(true);
         DestinationInfo.setVisible(true);
-        ShipInfo.setText("Ship's name: "+Ship[i]+" with "+Chimney[i]+" chimney");
-        ContentInfo.setText("Content: "+Content[i]);
-        ArriveInfo.setText("Arrival Time: "+Arrival[i]);
-        DestinationInfo.setText("Destination: "+Destination[i]);
+        ShipInfo.setText("Ship's name: "+d.Ship[i]+" with "+d.Chimney[i]+" chimney");
+        ContentInfo.setText("Content: "+d.Content[i]);
+        ArriveInfo.setText("Arrival Time: "+d.Arrival[i]);
+        DestinationInfo.setText("Destination: "+d.Destination[i]);
       
     }//GEN-LAST:event_ContentButtonActionPerformed
 
@@ -436,7 +428,7 @@ public class Qna extends javax.swing.JFrame {
         i++;
         Image();
         PicInfo.setVisible(true);
-        ShipInfo.setText("Ship's Name: "+Ship[i]+" with "+Chimney[i]+" chimney");
+        ShipInfo.setText("Ship's Name: "+d.Ship[i]+" with "+d.Chimney[i]+" chimney");
         ContentInfo.setVisible(false);
         ArriveInfo.setVisible(false);
         DestinationInfo.setVisible(false);
@@ -447,7 +439,7 @@ public class Qna extends javax.swing.JFrame {
         ContainedButton.setSelected(false);
         i--;
         Image();
-        ShipInfo.setText("Ship's Name: "+Ship[i]+" with "+Chimney[i]+" chimney");
+        ShipInfo.setText("Ship's Name: "+d.Ship[i]+" with "+d.Chimney[i]+" chimney");
         ContentInfo.setVisible(false);
         ArriveInfo.setVisible(false);
         DestinationInfo.setVisible(false);
@@ -455,16 +447,19 @@ public class Qna extends javax.swing.JFrame {
 
     private void ContainedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContainedButtonActionPerformed
         ContentInfo.setVisible(true);
-        ContentInfo.setText(Content[i]);
+        ContentInfo.setText(d.Content[i]);
     }//GEN-LAST:event_ContainedButtonActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void HeadedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeadedButtonActionPerformed
         DestinationInfo.setVisible(true);
-        DestinationInfo.setText(Destination[i]);
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        DestinationInfo.setText(d.Destination[i]);
+    }//GEN-LAST:event_HeadedButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new GraphicalShip().setVisible(true);
+        for(int j=0;j<d.Ship.length;j++){ 
+        }
+        
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -513,6 +508,7 @@ public class Qna extends javax.swing.JFrame {
     private javax.swing.JRadioButton EnglishButton;
     private javax.swing.JRadioButton FrenchButton;
     private javax.swing.JRadioButton GreekButton;
+    private javax.swing.JRadioButton HeadedButton;
     private javax.swing.JPanel InfoPanel;
     private javax.swing.JRadioButton LeftButton;
     private javax.swing.JLabel PicInfo;
@@ -528,6 +524,5 @@ public class Qna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
     // End of variables declaration//GEN-END:variables
 }

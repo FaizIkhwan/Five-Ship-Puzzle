@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,8 +17,21 @@ public class GraphicalShip extends javax.swing.JFrame {
     /**
      * Creates new form GraphicalShip
      */
+    ImageIcon[] imagelist= new ImageIcon[5];
+    
+        
     public GraphicalShip() {
         initComponents();
+        Data q=new Data();
+        
+        for(int i=0;i<q.Picture.length;i++)
+            imagelist[i]= new ImageIcon(getClass().getResource("/"+q.Picture[i]));
+        
+        Position0.setIcon(imagelist[0]);
+        Position1.setIcon(imagelist[1]);
+        Position2.setIcon(imagelist[2]);
+        Position3.setIcon(imagelist[3]);
+        Position4.setIcon(imagelist[4]);
         
     }
 
@@ -67,6 +81,11 @@ public class GraphicalShip extends javax.swing.JFrame {
         jButton2.setText("Lets Play Some Game");
 
         jButton3.setText("Let's Rearrange The Ship");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setLayout(null);
 
@@ -146,6 +165,10 @@ public class GraphicalShip extends javax.swing.JFrame {
         new Qna().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Position().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
