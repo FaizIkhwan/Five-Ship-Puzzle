@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Shah
+ * @author Shah & Ikhwan
  */
 public class Position extends javax.swing.JFrame {
 

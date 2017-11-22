@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Shah
+ * @author Shah & Ikhwan
  */
 public class Qna extends javax.swing.JFrame {
     
