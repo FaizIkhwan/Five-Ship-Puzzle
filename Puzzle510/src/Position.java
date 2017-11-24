@@ -8,14 +8,24 @@
  *
  * @author Shah
  */
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+import javax.swing.TransferHandler;
+
 public class Position extends javax.swing.JFrame {
 
     /**
      * Creates new form Position
      */
+    ImageIcon[] imagelist=new ImageIcon[6];
+    
     public Position() {
         initComponents();
-        new GraphicalShip().setVisible(true);
+        Data d=new Data();
+        for(int i=0;i<d.Picture.length;i++)
+            imagelist[i]=new ImageIcon(getClass().getResource("/"+d.Picture[i]));
     }
 
     /**
@@ -30,12 +40,10 @@ public class Position extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         NewPosition1 = new javax.swing.JLabel();
         NewPosition2 = new javax.swing.JLabel();
-        NewPosition0 = new javax.swing.JLabel();
         NewPosition3 = new javax.swing.JLabel();
         NewPosition4 = new javax.swing.JLabel();
+        NewPosition0 = new javax.swing.JLabel();
         Ocean2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Position0 = new javax.swing.JLabel();
         Position1 = new javax.swing.JLabel();
@@ -54,72 +62,68 @@ public class Position extends javax.swing.JFrame {
 
         NewPosition1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(NewPosition1);
-        NewPosition1.setBounds(160, 130, 150, 110);
+        NewPosition1.setBounds(170, 10, 150, 110);
 
         NewPosition2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(NewPosition2);
-        NewPosition2.setBounds(310, 240, 150, 110);
-
-        NewPosition0.setBorder(new javax.swing.border.MatteBorder(null));
-        jPanel3.add(NewPosition0);
-        NewPosition0.setBounds(10, 240, 150, 110);
+        NewPosition2.setBounds(310, 120, 150, 110);
 
         NewPosition3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(NewPosition3);
-        NewPosition3.setBounds(460, 130, 150, 110);
+        NewPosition3.setBounds(460, 10, 150, 110);
 
         NewPosition4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel3.add(NewPosition4);
-        NewPosition4.setBounds(610, 240, 150, 110);
+        NewPosition4.setBounds(610, 120, 150, 110);
+
+        NewPosition0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.add(NewPosition0);
+        NewPosition0.setBounds(20, 120, 150, 110);
 
         Ocean2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OceanPosition.gif"))); // NOI18N
         jPanel3.add(Ocean2);
-        Ocean2.setBounds(10, 80, 760, 290);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("New Position");
-        jPanel3.add(jLabel4);
-        jLabel4.setBounds(310, 10, 130, 30);
-
-        jLabel5.setText("Place the ship into new position");
-        jPanel3.add(jLabel5);
-        jLabel5.setBounds(280, 50, 160, 14);
+        Ocean2.setBounds(10, 0, 760, 230);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(null);
 
         Position0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FrenchShip.png"))); // NOI18N
+        Position0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                Position0MousePressed(evt);
+            }
+        });
         jPanel2.add(Position0);
-        Position0.setBounds(30, 240, 150, 110);
+        Position0.setBounds(30, 130, 150, 110);
 
         Position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GreekShip.png"))); // NOI18N
         jPanel2.add(Position1);
-        Position1.setBounds(180, 160, 150, 110);
+        Position1.setBounds(180, 50, 150, 110);
 
         Position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
         jPanel2.add(Position2);
-        Position2.setBounds(320, 240, 150, 110);
+        Position2.setBounds(320, 130, 150, 110);
 
         Position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishShip.png"))); // NOI18N
         jPanel2.add(Position3);
-        Position3.setBounds(460, 160, 150, 110);
+        Position3.setBounds(460, 50, 150, 110);
 
         Position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SpanishShip.png"))); // NOI18N
         jPanel2.add(Position4);
-        Position4.setBounds(610, 240, 150, 110);
+        Position4.setBounds(610, 130, 150, 110);
 
         Ocean1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OceanPosition.gif"))); // NOI18N
         jPanel2.add(Ocean1);
-        Ocean1.setBounds(10, 80, 760, 290);
+        Ocean1.setBounds(10, 50, 760, 200);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Original Position");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(310, 10, 130, 30);
+        jLabel2.setBounds(310, 0, 130, 30);
 
         jLabel3.setText("Drag the ship below into the empty boxes to reposition the ship");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(230, 50, 310, 14);
+        jLabel3.setBounds(230, 30, 310, 14);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Change The Position of Ship");
@@ -142,17 +146,22 @@ public class Position extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Position0MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position0MousePressed
+        JComponent comp=(JComponent) evt.getSource();
+        TransferHandler th=comp.getTransferHandler();
+        th.exportAsDrag(comp, evt, TransferHandler.COPY);
+    }//GEN-LAST:event_Position0MousePressed
 
     /**
      * @param args the command line arguments
@@ -186,6 +195,7 @@ public class Position extends javax.swing.JFrame {
             public void run() {
                 new Position().setVisible(true);
             }
+            
         });
     }
 
@@ -205,8 +215,6 @@ public class Position extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

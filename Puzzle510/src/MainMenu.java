@@ -74,14 +74,24 @@ public class MainMenu extends javax.swing.JFrame {
         ShipGraphic.setBounds(60, 160, 160, 23);
 
         ShipSudoku.setText("Shipdoku");
+        ShipSudoku.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShipSudokuActionPerformed(evt);
+            }
+        });
         jPanel1.add(ShipSudoku);
         ShipSudoku.setBounds(60, 290, 160, 23);
 
         ShipShuffle.setText("Shuffle The Ship");
+        ShipShuffle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShipShuffleActionPerformed(evt);
+            }
+        });
         jPanel1.add(ShipShuffle);
         ShipShuffle.setBounds(60, 230, 160, 23);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sound-in-circular-button.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundon.png"))); // NOI18N
         jPanel1.add(jButton5);
         jButton5.setBounds(240, 410, 40, 41);
 
@@ -130,6 +140,16 @@ public class MainMenu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ShipShuffleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipShuffleActionPerformed
+        new Position().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ShipShuffleActionPerformed
+
+    private void ShipSudokuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipSudokuActionPerformed
+        new Shidoku().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ShipSudokuActionPerformed
 
     /**
      * @param args the command line arguments

@@ -34,6 +34,16 @@ public class Qna extends javax.swing.JFrame {
         PicInfo.setIcon(imagelist[i]);
     }
     
+    public void Select(){
+        InfoPanel.setVisible(true);
+        ContentButton.setSelected(false);
+        ShipButton.setSelected(false);
+        RightButton.setSelected(false);
+        LeftButton.setSelected(false);
+        ContainedButton.setSelected(false);
+        HeadedButton.setSelected(false);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -327,9 +337,7 @@ public class Qna extends javax.swing.JFrame {
         BrazilianButton.setSelected(false);
         EnglishButton.setSelected(false);
         SpanishButton.setSelected(false);
-        InfoPanel.setVisible(true);
-        ContentButton.setSelected(false);
-        ShipButton.setSelected(false);
+        Select();
         i=0;
         Process();
     }//GEN-LAST:event_FrenchButtonActionPerformed
@@ -345,9 +353,7 @@ public class Qna extends javax.swing.JFrame {
         BrazilianButton.setSelected(false);
         EnglishButton.setSelected(false);
         SpanishButton.setSelected(false);
-        InfoPanel.setVisible(true);
-        ContentButton.setSelected(false);
-        ShipButton.setSelected(false);
+        Select();
         i=1;
         Process();
     }//GEN-LAST:event_GreekButtonActionPerformed
@@ -358,9 +364,7 @@ public class Qna extends javax.swing.JFrame {
         BrazilianButton.setSelected(true);
         EnglishButton.setSelected(false);
         SpanishButton.setSelected(false);
-        InfoPanel.setVisible(true);
-        ContentButton.setSelected(false);
-        ShipButton.setSelected(false);
+        Select();
         i=2;
         Process();
     }//GEN-LAST:event_BrazilianButtonActionPerformed
@@ -371,9 +375,7 @@ public class Qna extends javax.swing.JFrame {
         BrazilianButton.setSelected(false);
         EnglishButton.setSelected(true);
         SpanishButton.setSelected(false);
-        InfoPanel.setVisible(true);
-        ContentButton.setSelected(false);
-        ShipButton.setSelected(false);
+        Select();
         i=3;
         Process();
     }//GEN-LAST:event_EnglishButtonActionPerformed
@@ -384,9 +386,7 @@ public class Qna extends javax.swing.JFrame {
         BrazilianButton.setSelected(false);
         EnglishButton.setSelected(false);
         SpanishButton.setSelected(true);
-        InfoPanel.setVisible(true);
-        ContentButton.setSelected(false);
-        ShipButton.setSelected(false);
+        Select();
         i=4;
         Process();
     }//GEN-LAST:event_SpanishButtonActionPerformed

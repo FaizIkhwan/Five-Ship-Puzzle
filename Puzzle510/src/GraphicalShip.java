@@ -22,10 +22,10 @@ public class GraphicalShip extends javax.swing.JFrame {
         
     public GraphicalShip() {
         initComponents();
-        Data q=new Data();
+        Data d=new Data();
         
-        for(int i=0;i<q.Picture.length;i++)
-            imagelist[i]= new ImageIcon(getClass().getResource("/"+q.Picture[i]));
+        for(int i=0;i<d.Picture.length;i++)
+            imagelist[i]= new ImageIcon(getClass().getResource("/"+d.Picture[i]));
         
         Position0.setIcon(imagelist[0]);
         Position1.setIcon(imagelist[1]);
@@ -79,6 +79,11 @@ public class GraphicalShip extends javax.swing.JFrame {
         });
 
         jButton2.setText("Lets Play Some Game");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Let's Rearrange The Ship");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +154,7 @@ public class GraphicalShip extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
-                .addGap(65, 65, 65)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(HomeButton))
         );
 
@@ -168,7 +173,13 @@ public class GraphicalShip extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         new Position().setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Shidoku().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
