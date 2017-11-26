@@ -1,10 +1,7 @@
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,19 +23,5 @@ public class Data {
     public String[] Picture={"FrenchShip.png","GreekShip.png","BrazilianShip.png",
                              "EnglishShip.png","SpanishShip.png"};
     
-    public void music() // music
-    {
-        AudioPlayer MGP = AudioPlayer.player;
-        AudioStream BGM;
-        AudioData MD;
-        ContinuousAudioDataStream loop = null;
-        try
-        {
-            BGM = new AudioStream(new FileInputStream("/GameSong.wav"));
-            MD = BGM.getData();
-            loop = new ContinuousAudioDataStream(MD);
-        }catch(IOException error) {
-            }
-        MGP.start(loop);
-    }
+
 }
