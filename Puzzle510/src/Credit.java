@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Faiz Ikhwan
+ * @author Shah & Ikhwan
  */
 public class Credit extends javax.swing.JFrame {
 
@@ -29,9 +29,11 @@ public class Credit extends javax.swing.JFrame {
         labelDescription = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         labelAbout = new javax.swing.JLabel();
-        buttonMainMenu = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        buttonMainMenu = new javax.swing.JButton();
+        buttonExit = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         menuExit = new javax.swing.JMenuItem();
@@ -42,13 +44,14 @@ public class Credit extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 204));
+        setPreferredSize(new java.awt.Dimension(299, 545));
 
-        labelDescription.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        labelDescription.setText("<html>Most popular puzzle game! Easy to play and pleasureable game for all age.<br>Easy to learn and fun to master gameplay. We really hope you enjoy it!<br><br><br>Version:<br>1.2<br>Updated on:<br>19 Nov 2017<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
+        labelDescription.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelDescription.setText("<html>Most popular puzzle game! Easy to play and<br>pleasureable game for all age. Easy to learn and <br> fun to master gameplay. We really hopeyou enjoy it!<br><br>Version:<br>1.2 (19 Nov 2017)<br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 204));
 
-        labelAbout.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        labelAbout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelAbout.setText("About");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -56,7 +59,7 @@ public class Credit extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(181, 181, 181)
+                .addGap(122, 122, 122)
                 .addComponent(labelAbout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -68,7 +71,13 @@ public class Credit extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        buttonMainMenu.setBackground(new java.awt.Color(102, 255, 204));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shahResize.jpg"))); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikhwanResize.jpg"))); // NOI18N
+
+        jPanel2.setBackground(new java.awt.Color(0, 255, 204));
+
+        buttonMainMenu.setBackground(new java.awt.Color(0, 255, 204));
         buttonMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu.png"))); // NOI18N
         buttonMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,9 +85,34 @@ public class Credit extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shahResize.jpg"))); // NOI18N
+        buttonExit.setBackground(new java.awt.Color(0, 255, 204));
+        buttonExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Off.png"))); // NOI18N
+        buttonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonExitActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikhwanResize.jpg"))); // NOI18N
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonExit)
+                    .addComponent(buttonMainMenu))
+                .addContainerGap())
+        );
 
         menuFile.setText("File");
 
@@ -114,35 +148,31 @@ public class Credit extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel2)
-                        .addGap(158, 158, 158))
-                    .addComponent(labelDescription)
+                        .addContainerGap()
+                        .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addGap(0, 32, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(labelDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buttonMainMenu)
-                .addGap(1, 1, 1))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -157,17 +187,24 @@ public class Credit extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_menuExitActionPerformed
 
+    private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_buttonExitActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonExit;
     private javax.swing.JButton buttonMainMenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelAbout;
     private javax.swing.JLabel labelDescription;
     private javax.swing.JMenuItem menuExit;

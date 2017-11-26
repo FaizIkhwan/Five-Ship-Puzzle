@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Shah
+ * @author Shah & Ikhwan
  */
 public class GraphicalShip extends javax.swing.JFrame {
 

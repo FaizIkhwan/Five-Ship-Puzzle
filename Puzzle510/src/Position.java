@@ -6,7 +6,7 @@
 
 /**
  *
- * @author Shah
+ * @author Shah & Ikhwan
  */
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
