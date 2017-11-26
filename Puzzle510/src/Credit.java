@@ -49,7 +49,7 @@ public class Credit extends javax.swing.JFrame {
         labelDescription.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelDescription.setText("<html>Most popular puzzle game! Easy to play and<br>pleasureable game for all age. Easy to learn and <br> fun to master gameplay. We really hopeyou enjoy it!<br><br>Version:<br>1.2 (19 Nov 2017)<br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         labelAbout.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         labelAbout.setText("About");
@@ -75,9 +75,9 @@ public class Credit extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikhwanResize.jpg"))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(0, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        buttonMainMenu.setBackground(new java.awt.Color(0, 255, 204));
+        buttonMainMenu.setBackground(new java.awt.Color(255, 255, 255));
         buttonMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu.png"))); // NOI18N
         buttonMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,7 +85,7 @@ public class Credit extends javax.swing.JFrame {
             }
         });
 
-        buttonExit.setBackground(new java.awt.Color(0, 255, 204));
+        buttonExit.setBackground(new java.awt.Color(255, 255, 255));
         buttonExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Off.png"))); // NOI18N
         buttonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,20 +98,17 @@ public class Credit extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(buttonMainMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80)
-                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttonExit, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(buttonExit)
-                    .addComponent(buttonMainMenu))
-                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonMainMenu, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(buttonExit, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
         menuFile.setText("File");

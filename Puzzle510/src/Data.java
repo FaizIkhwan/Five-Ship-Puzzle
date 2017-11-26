@@ -1,6 +1,9 @@
 
-import java.io.FileInputStream;
-import java.io.IOException;
+
+import java.io.File;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.*;
+import javax.swing.JOptionPane;
 
 
 /*
@@ -23,5 +26,15 @@ public class Data {
     public String[] Picture={"FrenchShip.png","GreekShip.png","BrazilianShip.png",
                              "EnglishShip.png","SpanishShip.png"};
     
-
+    public void musicPlay()
+    {
+        try{
+            JFXPanel j = new JFXPanel();
+            String uri = new File("GameSong.wav").toURI().toString();
+            new MediaPlayer(new Media(uri)).play();
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    
+    }
 }
