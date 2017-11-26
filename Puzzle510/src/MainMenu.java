@@ -33,11 +33,10 @@ public class MainMenu extends javax.swing.JFrame {
         ShipGraphic = new javax.swing.JButton();
         ShipSudoku = new javax.swing.JButton();
         ShipShuffle = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        buttonSound = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        buttonSound = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuItemExit = new javax.swing.JMenuItem();
@@ -83,20 +82,6 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.add(ShipShuffle);
         ShipShuffle.setBounds(60, 230, 160, 23);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ocean.gif"))); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(-10, 0, 290, 450);
-
-        jPanel2.setBackground(new java.awt.Color(0, 255, 204));
-
-        buttonSound.setBackground(new java.awt.Color(0, 255, 204));
-        buttonSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundOff.png"))); // NOI18N
-        buttonSound.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSoundActionPerformed(evt);
-            }
-        });
-
         jButton1.setBackground(new java.awt.Color(0, 255, 204));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Off.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +89,8 @@ public class MainMenu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(120, 400, 40, 40);
 
         jButton6.setBackground(new java.awt.Color(0, 255, 204));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Credit.png"))); // NOI18N
@@ -112,31 +99,22 @@ public class MainMenu extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
+        jPanel1.add(jButton6);
+        jButton6.setBounds(10, 400, 40, 41);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addComponent(buttonSound, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(buttonSound, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        buttonSound.setBackground(new java.awt.Color(0, 255, 204));
+        buttonSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundOff.png"))); // NOI18N
+        buttonSound.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSoundActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonSound);
+        buttonSound.setBounds(220, 400, 40, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ocean.gif"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(-10, 0, 280, 450);
 
         jMenu1.setText("File");
 
@@ -173,17 +151,15 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        setBounds(0, 0, 299, 545);
+        setBounds(0, 0, 302, 510);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ShipInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipInfoActionPerformed
@@ -206,8 +182,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void buttonSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSoundActionPerformed
         // TODO add your handling code here:
-        Data musicPlay = new Data();
-        musicPlay.music();
+        Music musicObject = new Music();
+        musicObject.musicPlay();
     }//GEN-LAST:event_buttonSoundActionPerformed
 
     private void menuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemExitActionPerformed
@@ -270,7 +246,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JMenuItem menuItemExit;
     // End of variables declaration//GEN-END:variables
 }
