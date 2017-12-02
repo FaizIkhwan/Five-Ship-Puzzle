@@ -1,3 +1,12 @@
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import javax.swing.JOptionPane;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import javax.sound.sampled.*;
+import javax.swing.ImageIcon;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,9 +22,14 @@ public class MainMenu extends javax.swing.JFrame {
     /**
      * Creates new form MainMenu
      */
+    static int sound = 2;
+    static InputStream inputStream;
+    static AudioStream audioStream;
+    ImageIcon imageOn = new ImageIcon(getClass().getResource("/soundOn.png"));
+    ImageIcon imageOff = new ImageIcon(getClass().getResource("/soundOff.png"));
+    
     public MainMenu() {
-        initComponents();
-       
+        initComponents();      
     }
 
     /**
@@ -36,7 +50,6 @@ public class MainMenu extends javax.swing.JFrame {
         buttonOnSound = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        buttonOffSound = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,7 +94,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(buttonOnSound);
-        buttonOnSound.setBounds(200, 410, 40, 40);
+        buttonOnSound.setBounds(240, 410, 40, 40);
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Credit.png"))); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -100,15 +113,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1);
         jButton1.setBounds(120, 410, 40, 40);
-
-        buttonOffSound.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundOff.png"))); // NOI18N
-        buttonOffSound.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonOffSoundActionPerformed(evt);
-            }
-        });
-        jPanel1.add(buttonOffSound);
-        buttonOffSound.setBounds(240, 410, 40, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ocean.gif"))); // NOI18N
         jPanel1.add(jLabel2);
@@ -130,9 +134,40 @@ public class MainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void musicPlay()
+    {
+        
+        try
+        {               
+            if(sound == 2)
+            {
+                inputStream = new FileInputStream("GameSong.wav");
+                audioStream = new AudioStream(inputStream);
+            }            
+            if(sound == 1)
+            {
+                AudioPlayer.player.stop(audioStream);  
+                sound = 2;
+                return;
+            }    
+            if(sound == 0 || sound == 2)
+            {
+                AudioPlayer.player.start(audioStream);
+                sound = 1;
+            }
+                
+            
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }    
+    
     private void ShipInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipInfoActionPerformed
-        new Qna().setVisible(true);
-        dispose();
+        new Qna().setVisible(true); 
+        dispose(); 
     }//GEN-LAST:event_ShipInfoActionPerformed
 
     private void ShipGraphicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipGraphicActionPerformed
@@ -144,20 +179,25 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void buttonOnSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOnSoundActionPerformed
-        Data mp = new Data();
-        mp.musicPlay();
+        if(sound == 1)
+        {
+            musicPlay();
+            buttonOnSound.setIcon(imageOn); 
+            JOptionPane.showMessageDialog(null, sound);
+            return;
+        }
+        if(sound == 0 || sound == 2)
+        {
+            musicPlay();            
+            buttonOnSound.setIcon(imageOff);
+            JOptionPane.showMessageDialog(null, sound);           
+        }        
     }//GEN-LAST:event_buttonOnSoundActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void buttonOffSoundActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonOffSoundActionPerformed
-        // TODO add your handling code here:
-        Data ms = new Data();
-        ms.musicStop();
-    }//GEN-LAST:event_buttonOffSoundActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,7 +239,6 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton ShipInfo;
     private javax.swing.JButton ShipShuffle;
     private javax.swing.JButton ShipSudoku;
-    private javax.swing.JButton buttonOffSound;
     private javax.swing.JButton buttonOnSound;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
