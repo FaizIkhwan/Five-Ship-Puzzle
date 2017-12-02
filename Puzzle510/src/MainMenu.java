@@ -182,15 +182,13 @@ public class MainMenu extends javax.swing.JFrame {
         if(sound == 1)
         {
             musicPlay();
-            buttonOnSound.setIcon(imageOn); 
-            JOptionPane.showMessageDialog(null, sound);
+            buttonOnSound.setIcon(imageOn);             
             return;
         }
         if(sound == 0 || sound == 2)
         {
             musicPlay();            
-            buttonOnSound.setIcon(imageOff);
-            JOptionPane.showMessageDialog(null, sound);           
+            buttonOnSound.setIcon(imageOff);                      
         }        
     }//GEN-LAST:event_buttonOnSoundActionPerformed
 
