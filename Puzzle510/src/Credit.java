@@ -34,20 +34,13 @@ public class Credit extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         buttonMainMenu = new javax.swing.JButton();
         buttonExit = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        menuFile = new javax.swing.JMenu();
-        menuExit = new javax.swing.JMenuItem();
-        menuOption = new javax.swing.JMenu();
-        menuSoundOption = new javax.swing.JMenu();
-        menuSoundOn = new javax.swing.JMenuItem();
-        menuSoundOff = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 255, 204));
         setPreferredSize(new java.awt.Dimension(299, 545));
 
         labelDescription.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        labelDescription.setText("<html>Most popular puzzle game! Easy to play and<br>pleasureable game for all age. Easy to learn and <br> fun to master gameplay. We really hopeyou enjoy it!<br><br>Version:<br>1.2 (19 Nov 2017)<br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
+        labelDescription.setText("<html>Most popular puzzle game! Easy to play and<br>pleasureable game for all age. Easy to learn and <br> fun to master gameplay. We really hope you enjoy it!<br><br>Version:<br>1.2 (19 Nov 2017)<br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -75,7 +68,7 @@ public class Credit extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ikhwanResize.jpg"))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
 
         buttonMainMenu.setBackground(new java.awt.Color(255, 255, 255));
         buttonMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu.png"))); // NOI18N
@@ -111,34 +104,6 @@ public class Credit extends javax.swing.JFrame {
                     .addComponent(buttonExit, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
 
-        menuFile.setText("File");
-
-        menuExit.setText("Exit");
-        menuExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuExitActionPerformed(evt);
-            }
-        });
-        menuFile.add(menuExit);
-
-        jMenuBar1.add(menuFile);
-
-        menuOption.setText("Option");
-
-        menuSoundOption.setText("Sound");
-
-        menuSoundOn.setText("Sound On");
-        menuSoundOption.add(menuSoundOn);
-
-        menuSoundOff.setText("Sound Off");
-        menuSoundOption.add(menuSoundOff);
-
-        menuOption.add(menuSoundOption);
-
-        jMenuBar1.add(menuOption);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,7 +133,7 @@ public class Credit extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -178,11 +143,6 @@ public class Credit extends javax.swing.JFrame {
     private void buttonMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMainMenuActionPerformed
         dispose();
     }//GEN-LAST:event_buttonMainMenuActionPerformed
-
-    private void menuExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExitActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_menuExitActionPerformed
 
     private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
         // TODO add your handling code here:
@@ -199,16 +159,9 @@ public class Credit extends javax.swing.JFrame {
     private javax.swing.JButton buttonMainMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelAbout;
     private javax.swing.JLabel labelDescription;
-    private javax.swing.JMenuItem menuExit;
-    private javax.swing.JMenu menuFile;
-    private javax.swing.JMenu menuOption;
-    private javax.swing.JMenuItem menuSoundOff;
-    private javax.swing.JMenuItem menuSoundOn;
-    private javax.swing.JMenu menuSoundOption;
     // End of variables declaration//GEN-END:variables
 }
