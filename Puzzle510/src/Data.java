@@ -17,15 +17,33 @@ import javax.swing.JOptionPane;
  * @author Shah & Ikhwan
  */
 public class Data {
-    public String[] Ship={"French Ship","Greek Ship","Brazilian Ship",
-                          "English Ship","Spanish Ship"};
-    public String[] Content={"Tea","Coffee","Cocoa","Rice","Corn"};
-    public String[] Arrival={"5.00am","6.00pm","8.00pm","9.00pm","7.00pm"};
-    public String[] Chimney={"Blue","Red","Black","White","Green"};
-    public String[] Destination={"Genoa","Hamburg","Manila","Marseille","Port Said"};
-    public String[] Picture={"FrenchShip.png","GreekShip.png","BrazilianShip.png",
-                             "EnglishShip.png","SpanishShip.png"};
     
+    public String Ship;
+    public String Content;
+    public String Arrival;
+    public String Chimney;
+    public String Destination;
+    public String Picture;
+    
+    public Data(){
+        
+            Ship="null";
+            Content="null";
+            Arrival="null";
+            Chimney="null";
+            Destination="null";
+            Picture="null";
+    }
+    
+    public Data(String s,String c,String a,String h,String d,String p){
+        Ship=s;
+        Content=c;
+        Arrival=a;
+        Chimney=h;
+        Destination=d;
+        Picture=p;
+    }
+      
     public void musicPlay()
     {
         try{
@@ -37,4 +55,5 @@ public class Data {
         }
     
     }
+    
 }

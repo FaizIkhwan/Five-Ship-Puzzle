@@ -17,22 +17,20 @@ public class GraphicalShip extends javax.swing.JFrame {
     /**
      * Creates new form GraphicalShip
      */
+    Position pr=new Position();
     ImageIcon[] imagelist= new ImageIcon[5];
     
         
     public GraphicalShip() {
         initComponents();
-        Data d=new Data();
-        
-        for(int i=0;i<d.Picture.length;i++)
-            imagelist[i]= new ImageIcon(getClass().getResource("/"+d.Picture[i]));
+        for(int i=0;i<imagelist.length;i++)
+            imagelist[i]= new ImageIcon(getClass().getResource("/"+pr.a[i].Picture));  
         
         Position0.setIcon(imagelist[0]);
         Position1.setIcon(imagelist[1]);
         Position2.setIcon(imagelist[2]);
         Position3.setIcon(imagelist[3]);
         Position4.setIcon(imagelist[4]);
-        
     }
 
     /**
@@ -47,7 +45,6 @@ public class GraphicalShip extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         HomeButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         Position1 = new javax.swing.JLabel();
@@ -56,6 +53,7 @@ public class GraphicalShip extends javax.swing.JFrame {
         Position3 = new javax.swing.JLabel();
         Position4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(java.awt.Color.darkGray);
@@ -78,13 +76,6 @@ public class GraphicalShip extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Lets Play Some Game");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         jButton3.setText("Let's Rearrange The Ship");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,7 +85,7 @@ public class GraphicalShip extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        Position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GreekShip.png"))); // NOI18N
+        Position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
         jPanel2.add(Position1);
         Position1.setBounds(160, 310, 150, 110);
 
@@ -102,15 +93,15 @@ public class GraphicalShip extends javax.swing.JFrame {
         jPanel2.add(Position2);
         Position2.setBounds(300, 390, 150, 110);
 
-        Position0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FrenchShip.png"))); // NOI18N
+        Position0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
         jPanel2.add(Position0);
         Position0.setBounds(10, 390, 150, 110);
 
-        Position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishShip.png"))); // NOI18N
+        Position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
         jPanel2.add(Position3);
         Position3.setBounds(440, 310, 150, 110);
 
-        Position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SpanishShip.png"))); // NOI18N
+        Position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
         jPanel2.add(Position4);
         Position4.setBounds(590, 390, 150, 110);
 
@@ -128,19 +119,21 @@ public class GraphicalShip extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(320, 320, 320)
                         .addComponent(jLabel2))
-                    .addComponent(HomeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(58, 58, 58)
                                 .addComponent(jButton3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)
-                                .addGap(141, 141, 141)))))
+                                .addGap(254, 254, 254)))))
                 .addGap(0, 50, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(HomeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(197, 197, 197))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,10 +145,11 @@ public class GraphicalShip extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(HomeButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(HomeButton)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
@@ -176,11 +170,6 @@ public class GraphicalShip extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new Shidoku().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -194,10 +183,10 @@ public class GraphicalShip extends javax.swing.JFrame {
     private javax.swing.JLabel Position3;
     private javax.swing.JLabel Position4;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

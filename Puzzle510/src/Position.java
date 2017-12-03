@@ -16,18 +16,35 @@ import javax.swing.TransferHandler;
 
 public class Position extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Position
-     */
-    ImageIcon[] imagelist=new ImageIcon[6];
+    private Data[] p = new Data[5];
+    private Data[] d = new Data[5];
+    Data[] a = new Data[5];    
+    private ImageIcon[] imagelist=new ImageIcon[5];
+    private int i,k;
+    private static int j=0;
     
     public Position() {
         initComponents();
-        Data d=new Data();
-        for(int i=0;i<d.Picture.length;i++)
-            imagelist[i]=new ImageIcon(getClass().getResource("/"+d.Picture[i]));
+        jLabel4.setText(Integer.toString(j));
+        d[0]=new Data("French Ship","Tea","5.00pm","Blue","Genoa","FrenchShip.png");
+        d[1]=new Data("Greek Ship","Coffee","6.00pm","Red","Hamburg","GreekShip.png");
+        d[2]=new Data("Brazilian Ship","Cocoa","8.00pm","Manila","Genoa","BrazilianShip.png");
+        d[3]=new Data("English Ship","Rice","9.00pm","White","Genoa","EnglishShip.png");
+        d[4]=new Data("Spanish Ship","Corn","7.00pm","Green","Genoa","SpanishShip.png");
+        if(j==0){
+            System.arraycopy(d, 0, a, 0, d.length);
+        }
+        else if(j==1){
+            System.arraycopy(p, 0, a, 0, p.length);
+        }   
+       for(int r=0;r<imagelist.length;r++)
+            imagelist[r]= new ImageIcon(getClass().getResource("/"+a[r].Picture)); 
     }
-
+    
+    public void PChange(){
+        p[k]=new Data(d[i].Ship,d[i].Content,d[i].Arrival,d[i].Chimney,d[i].Destination,d[i].Picture);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,131 +54,329 @@ public class Position extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
-        NewPosition1 = new javax.swing.JLabel();
-        NewPosition2 = new javax.swing.JLabel();
-        NewPosition3 = new javax.swing.JLabel();
-        NewPosition4 = new javax.swing.JLabel();
-        NewPosition0 = new javax.swing.JLabel();
-        Ocean2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        OldPosition = new javax.swing.JPanel();
         Position0 = new javax.swing.JLabel();
         Position1 = new javax.swing.JLabel();
         Position2 = new javax.swing.JLabel();
         Position3 = new javax.swing.JLabel();
         Position4 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        Position5 = new javax.swing.JLabel();
+        Position6 = new javax.swing.JLabel();
+        Position7 = new javax.swing.JLabel();
+        Position8 = new javax.swing.JLabel();
+        Position9 = new javax.swing.JLabel();
+        Ocean2 = new javax.swing.JLabel();
         Ocean1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        ConfirmButton = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel3.setLayout(null);
-
-        NewPosition1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(NewPosition1);
-        NewPosition1.setBounds(170, 10, 150, 110);
-
-        NewPosition2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(NewPosition2);
-        NewPosition2.setBounds(310, 120, 150, 110);
-
-        NewPosition3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(NewPosition3);
-        NewPosition3.setBounds(460, 10, 150, 110);
-
-        NewPosition4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(NewPosition4);
-        NewPosition4.setBounds(610, 120, 150, 110);
-
-        NewPosition0.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(NewPosition0);
-        NewPosition0.setBounds(20, 120, 150, 110);
-
-        Ocean2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OceanPosition.gif"))); // NOI18N
-        jPanel3.add(Ocean2);
-        Ocean2.setBounds(10, 0, 760, 230);
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.setLayout(null);
+        OldPosition.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        OldPosition.setLayout(null);
 
         Position0.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FrenchShip.png"))); // NOI18N
         Position0.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                Position0MousePressed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Position0MouseClicked(evt);
             }
         });
-        jPanel2.add(Position0);
-        Position0.setBounds(30, 130, 150, 110);
+        OldPosition.add(Position0);
+        Position0.setBounds(30, 80, 150, 120);
 
         Position1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GreekShip.png"))); // NOI18N
-        jPanel2.add(Position1);
-        Position1.setBounds(180, 50, 150, 110);
+        Position1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Position1MouseClicked(evt);
+            }
+        });
+        OldPosition.add(Position1);
+        Position1.setBounds(170, 10, 150, 120);
 
         Position2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/BrazilianShip.png"))); // NOI18N
-        jPanel2.add(Position2);
-        Position2.setBounds(320, 130, 150, 110);
+        Position2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Position2MouseClicked(evt);
+            }
+        });
+        OldPosition.add(Position2);
+        Position2.setBounds(310, 90, 150, 120);
 
         Position3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishShip.png"))); // NOI18N
-        jPanel2.add(Position3);
-        Position3.setBounds(460, 50, 150, 110);
+        Position3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Position3MouseClicked(evt);
+            }
+        });
+        OldPosition.add(Position3);
+        Position3.setBounds(450, 0, 150, 120);
 
         Position4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SpanishShip.png"))); // NOI18N
-        jPanel2.add(Position4);
-        Position4.setBounds(610, 130, 150, 110);
+        Position4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Position4MouseClicked(evt);
+            }
+        });
+        OldPosition.add(Position4);
+        Position4.setBounds(590, 90, 150, 120);
+
+        jRadioButton1.setText("Position 1");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        OldPosition.add(jRadioButton1);
+        jRadioButton1.setBounds(50, 470, 80, 23);
+
+        jRadioButton2.setText("Position 2");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+        OldPosition.add(jRadioButton2);
+        jRadioButton2.setBounds(190, 350, 80, 23);
+
+        jRadioButton3.setText("Position 3");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+        OldPosition.add(jRadioButton3);
+        jRadioButton3.setBounds(340, 470, 80, 23);
+
+        jRadioButton4.setText("Position 4");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
+        OldPosition.add(jRadioButton4);
+        jRadioButton4.setBounds(500, 350, 80, 23);
+
+        jRadioButton5.setText("Position 5");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        OldPosition.add(jRadioButton5);
+        jRadioButton5.setBounds(660, 470, 80, 23);
+
+        Position5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        OldPosition.add(Position5);
+        Position5.setBounds(10, 350, 150, 120);
+
+        Position6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        OldPosition.add(Position6);
+        Position6.setBounds(160, 230, 150, 120);
+
+        Position7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        OldPosition.add(Position7);
+        Position7.setBounds(310, 350, 150, 120);
+
+        Position8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        OldPosition.add(Position8);
+        Position8.setBounds(460, 230, 150, 120);
+
+        Position9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        OldPosition.add(Position9);
+        Position9.setBounds(610, 350, 150, 120);
+
+        Ocean2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OceanPosition.gif"))); // NOI18N
+        OldPosition.add(Ocean2);
+        Ocean2.setBounds(10, -10, 760, 230);
 
         Ocean1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/OceanPosition.gif"))); // NOI18N
-        jPanel2.add(Ocean1);
-        Ocean1.setBounds(10, 50, 760, 200);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Original Position");
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(310, 0, 130, 30);
-
-        jLabel3.setText("Drag the ship below into the empty boxes to reposition the ship");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(230, 30, 310, 14);
+        OldPosition.add(Ocean1);
+        Ocean1.setBounds(10, 230, 760, 270);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setText("Change The Position of Ship");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Original Position");
+
+        jLabel3.setText("Drag the ship below into the empty boxes to reposition the ship");
+
+        jButton1.setText("See New Position of Ship");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Refresh.png"))); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        ConfirmButton.setText("Confirm Change");
+        ConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MainMenu.png"))); // NOI18N
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(243, 243, 243)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(80, 80, 80)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(OldPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(230, 230, 230)
+                                .addComponent(ConfirmButton)
+                                .addGap(60, 60, 60)
+                                .addComponent(jButton1)))
+                        .addGap(0, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(OldPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(ConfirmButton))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Position0MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position0MousePressed
-        JComponent comp=(JComponent) evt.getSource();
-        TransferHandler th=comp.getTransferHandler();
-        th.exportAsDrag(comp, evt, TransferHandler.COPY);
-    }//GEN-LAST:event_Position0MousePressed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton3.setSelected(false);
+        jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
+        j=1;
+        new Position().setVisible(true);
+    }//GEN-LAST:event_ConfirmButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        new GraphicalShip().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new MainMenu().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void Position0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position0MouseClicked
+        i=0;
+    }//GEN-LAST:event_Position0MouseClicked
+
+    private void Position1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position1MouseClicked
+        i=1;
+    }//GEN-LAST:event_Position1MouseClicked
+
+    private void Position2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position2MouseClicked
+        i=2;
+    }//GEN-LAST:event_Position2MouseClicked
+
+    private void Position3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position3MouseClicked
+        i=3;
+    }//GEN-LAST:event_Position3MouseClicked
+
+    private void Position4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Position4MouseClicked
+        i=4;
+    }//GEN-LAST:event_Position4MouseClicked
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        k=0;
+        PChange();
+        Position5.setIcon(imagelist[i]);
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        k=1;
+        PChange();
+        Position6.setIcon(imagelist[i]);
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        k=2;
+        PChange();
+        Position7.setIcon(imagelist[i]);
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        k=3;
+        PChange();
+        Position8.setIcon(imagelist[i]);
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        k=4;
+        PChange();
+        Position9.setIcon(imagelist[i]);
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,28 +409,36 @@ public class Position extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Position().setVisible(true);
-            }
-            
+            } 
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel NewPosition0;
-    private javax.swing.JLabel NewPosition1;
-    private javax.swing.JLabel NewPosition2;
-    private javax.swing.JLabel NewPosition3;
-    private javax.swing.JLabel NewPosition4;
+    private javax.swing.JButton ConfirmButton;
     private javax.swing.JLabel Ocean1;
     private javax.swing.JLabel Ocean2;
+    private javax.swing.JPanel OldPosition;
     private javax.swing.JLabel Position0;
     private javax.swing.JLabel Position1;
     private javax.swing.JLabel Position2;
     private javax.swing.JLabel Position3;
     private javax.swing.JLabel Position4;
+    private javax.swing.JLabel Position5;
+    private javax.swing.JLabel Position6;
+    private javax.swing.JLabel Position7;
+    private javax.swing.JLabel Position8;
+    private javax.swing.JLabel Position9;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     // End of variables declaration//GEN-END:variables
 }

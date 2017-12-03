@@ -10,15 +10,14 @@
  */
 public class MainMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainMenu
-     */
+    Data da=new Data();
+    
     public MainMenu() {
-        initComponents();
-        Data mp=new Data();
-        mp.musicPlay();
+        initComponents(); 
+        da.musicPlay();
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,9 +29,9 @@ public class MainMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         ShipInfo = new javax.swing.JButton();
         ShipGraphic = new javax.swing.JButton();
-        ShipSudoku = new javax.swing.JButton();
         ShipShuffle = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -46,6 +45,8 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1.setText("Trading Ship Puzzle");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(60, 10, 155, 22);
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(170, 320, 60, 30);
 
         ShipInfo.setText("Ship Information");
         ShipInfo.addActionListener(new java.awt.event.ActionListener() {
@@ -65,22 +66,23 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel1.add(ShipGraphic);
         ShipGraphic.setBounds(60, 160, 160, 23);
 
-        ShipSudoku.setText("Shidoku");
-        jPanel1.add(ShipSudoku);
-        ShipSudoku.setBounds(60, 290, 160, 23);
-
         ShipShuffle.setText("Shuffle The Ship");
+        ShipShuffle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShipShuffleActionPerformed(evt);
+            }
+        });
         jPanel1.add(ShipShuffle);
         ShipShuffle.setBounds(60, 230, 160, 23);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sound-in-circular-button.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundon.png"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(240, 410, 40, 41);
+        jButton5.setBounds(240, 410, 40, 40);
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Credit.png"))); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +130,11 @@ public class MainMenu extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void ShipShuffleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipShuffleActionPerformed
+        new Position().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ShipShuffleActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -167,11 +174,11 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton ShipGraphic;
     private javax.swing.JButton ShipInfo;
     private javax.swing.JButton ShipShuffle;
-    private javax.swing.JButton ShipSudoku;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

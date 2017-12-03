@@ -13,7 +13,10 @@ import javax.swing.ImageIcon;
  */
 public class Qna extends javax.swing.JFrame {
     
-    Data d= new Data();  
+    Data da= new Data();
+    Data[] q = new Data[5];
+    MainMenu m=new MainMenu();
+    Position po=new Position();
     ImageIcon[] imagelist=new ImageIcon[5];
     int i;
     
@@ -21,16 +24,18 @@ public class Qna extends javax.swing.JFrame {
         initComponents();
         InfoPanel.setVisible(false);
         PicInfo.setVisible(false);
+        for(int i=0;i<q.length;i++)
+                q[i]=po.a[i];
     }
    
     public void Process(){
-        ShipName.setText(d.Ship[i]);
-        ShipName1.setText(d.Ship[i]);
-        ShipName2.setText(d.Ship[i]);
+        ShipName.setText(q[i].Ship);
+        ShipName1.setText(q[i].Ship);
+        ShipName2.setText(q[i].Ship);
     }
     
     public void Image(){
-        imagelist[i]=new ImageIcon(getClass().getResource("/"+d.Picture[i]));
+        imagelist[i]=new ImageIcon(getClass().getResource("/"+q[i].Picture));
         PicInfo.setIcon(imagelist[i]);
     }
     
@@ -415,10 +420,10 @@ public class Qna extends javax.swing.JFrame {
         ContentInfo.setVisible(true);
         ArriveInfo.setVisible(true);
         DestinationInfo.setVisible(true);
-        ShipInfo.setText("Ship's name: "+d.Ship[i]+" with "+d.Chimney[i]+" chimney");
-        ContentInfo.setText("Content: "+d.Content[i]);
-        ArriveInfo.setText("Arrival Time: "+d.Arrival[i]);
-        DestinationInfo.setText("Destination: "+d.Destination[i]);
+        ShipInfo.setText("Ship's name: "+q[i].Ship+" with "+q[i].Chimney+" chimney");
+        ContentInfo.setText("Content: "+q[i].Content);
+        ArriveInfo.setText("Arrival Time: "+q[i].Arrival);
+        DestinationInfo.setText("Destination: "+q[i].Destination);
       
     }//GEN-LAST:event_ContentButtonActionPerformed
 
@@ -428,7 +433,7 @@ public class Qna extends javax.swing.JFrame {
         i++;
         Image();
         PicInfo.setVisible(true);
-        ShipInfo.setText("Ship's Name: "+d.Ship[i]+" with "+d.Chimney[i]+" chimney");
+        ShipInfo.setText("Ship's Name: "+q[i].Ship+" with "+q[i].Chimney+" chimney");
         ContentInfo.setVisible(false);
         ArriveInfo.setVisible(false);
         DestinationInfo.setVisible(false);
@@ -439,7 +444,7 @@ public class Qna extends javax.swing.JFrame {
         ContainedButton.setSelected(false);
         i--;
         Image();
-        ShipInfo.setText("Ship's Name: "+d.Ship[i]+" with "+d.Chimney[i]+" chimney");
+        ShipInfo.setText("Ship's Name: "+q[i].Ship+" with "+q[i].Chimney+" chimney");
         ContentInfo.setVisible(false);
         ArriveInfo.setVisible(false);
         DestinationInfo.setVisible(false);
@@ -447,19 +452,16 @@ public class Qna extends javax.swing.JFrame {
 
     private void ContainedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContainedButtonActionPerformed
         ContentInfo.setVisible(true);
-        ContentInfo.setText(d.Content[i]);
+        ContentInfo.setText(q[i].Content);
     }//GEN-LAST:event_ContainedButtonActionPerformed
 
     private void HeadedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeadedButtonActionPerformed
         DestinationInfo.setVisible(true);
-        DestinationInfo.setText(d.Destination[i]);
+        DestinationInfo.setText(q[i].Destination);
     }//GEN-LAST:event_HeadedButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         new GraphicalShip().setVisible(true);
-        for(int j=0;j<d.Ship.length;j++){ 
-        }
-        
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
