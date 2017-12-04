@@ -1,4 +1,11 @@
 
+import java.io.File;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javax.swing.JOptionPane;
+
+
 
 
 
@@ -13,7 +20,6 @@
  * @author Shah & Ikhwan
  */
 public class Data {
-    
     public String Ship;
     public String Content;
     public String Arrival;
@@ -38,18 +44,5 @@ public class Data {
         Chimney=h;
         Destination=d;
         Picture=p;
-    }
-      
-    public void musicPlay()
-    {
-        try{
-            JFXPanel j = new JFXPanel();
-            String uri = new File("GameSong.wav").toURI().toString();
-            new MediaPlayer(new Media(uri)).play();
-        }catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex);
-        }
-    
-    }
-    
+    }    
 }

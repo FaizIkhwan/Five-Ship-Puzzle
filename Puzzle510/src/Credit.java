@@ -141,6 +141,7 @@ public class Credit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMainMenuActionPerformed
+        new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_buttonMainMenuActionPerformed
 

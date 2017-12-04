@@ -12,35 +12,34 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.TransferHandler;
 
 public class Position extends javax.swing.JFrame {
 
-    private Data[] p = new Data[5];
-    private Data[] d = new Data[5];
-    Data[] a = new Data[5];    
+    static Data[] p = new Data[5];
+    static Data[] d = new Data[5];   
     private ImageIcon[] imagelist=new ImageIcon[5];
     private int i,k;
-    private static int j=0;
+    private static int j;
     
     public Position() {
         initComponents();
-        jLabel4.setText(Integer.toString(j));
+        j=0;
         d[0]=new Data("French Ship","Tea","5.00pm","Blue","Genoa","FrenchShip.png");
         d[1]=new Data("Greek Ship","Coffee","6.00pm","Red","Hamburg","GreekShip.png");
         d[2]=new Data("Brazilian Ship","Cocoa","8.00pm","Manila","Genoa","BrazilianShip.png");
         d[3]=new Data("English Ship","Rice","9.00pm","White","Genoa","EnglishShip.png");
-        d[4]=new Data("Spanish Ship","Corn","7.00pm","Green","Genoa","SpanishShip.png");
-        if(j==0){
-            System.arraycopy(d, 0, a, 0, d.length);
-        }
-        else if(j==1){
-            System.arraycopy(p, 0, a, 0, p.length);
-        }   
-       for(int r=0;r<imagelist.length;r++)
-            imagelist[r]= new ImageIcon(getClass().getResource("/"+a[r].Picture)); 
+        d[4]=new Data("Spanish Ship","Corn","7.00pm","Green","Genoa","SpanishShip.png"); 
+        for(int l=0;l<imagelist.length;l++)
+            imagelist[l]=new ImageIcon(getClass().getResource("/"+d[l].Picture));
+        Position0.setIcon(imagelist[0]);
+        Position1.setIcon(imagelist[1]);
+        Position2.setIcon(imagelist[2]);
+        Position3.setIcon(imagelist[3]);
+        Position4.setIcon(imagelist[4]);
     }
-    
+ 
     public void PChange(){
         p[k]=new Data(d[i].Ship,d[i].Content,d[i].Arrival,d[i].Chimney,d[i].Destination,d[i].Picture);
     }
@@ -79,7 +78,7 @@ public class Position extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         ConfirmButton = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -210,7 +209,7 @@ public class Position extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Original Position");
 
-        jLabel3.setText("Drag the ship below into the empty boxes to reposition the ship");
+        jLabel3.setText("Click on the ship, then click on the new position to set a new position for the ship");
 
         jButton1.setText("See New Position of Ship");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -240,41 +239,39 @@ public class Position extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("See The Latest Ship Information");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(170, 170, 170)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(243, 243, 243)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(80, 80, 80)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(OldPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(230, 230, 230)
-                                .addComponent(ConfirmButton)
-                                .addGap(60, 60, 60)
-                                .addComponent(jButton1)))
-                        .addGap(0, 1, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(170, 170, 170)
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(323, 323, 323)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(46, 46, 46)
+                    .addComponent(jButton1)
+                    .addGap(86, 86, 86)
+                    .addComponent(ConfirmButton)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(42, 42, 42)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(OldPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 780, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(187, 187, 187))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,19 +284,16 @@ public class Position extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(OldPosition, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ConfirmButton, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(ConfirmButton))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addComponent(jButton3)
+                            .addComponent(jButton1)))
+                    .addComponent(jButton4)
+                    .addComponent(jButton2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -315,12 +309,12 @@ public class Position extends javax.swing.JFrame {
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         j=1;
-        new Position().setVisible(true);
+        new GraphicalShip(j).setVisible(true);
+        new Qna(j).setVisible(true);
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new GraphicalShip().setVisible(true);
-        dispose();
+        new GraphicalShip().setVisible(true);    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -352,6 +346,7 @@ public class Position extends javax.swing.JFrame {
         k=0;
         PChange();
         Position5.setIcon(imagelist[i]);
+        
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -377,6 +372,10 @@ public class Position extends javax.swing.JFrame {
         PChange();
         Position9.setIcon(imagelist[i]);
     }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        new Qna().setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,11 +429,11 @@ public class Position extends javax.swing.JFrame {
     private javax.swing.JLabel Position9;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
