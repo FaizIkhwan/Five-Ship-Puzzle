@@ -19,7 +19,7 @@ public class GraphicalShip extends javax.swing.JFrame {
      */
     private Position pr=new Position();
     private ImageIcon[] imagelist= new ImageIcon[5];
-    private static int j=0;
+    private int j=0;
     
         
     public GraphicalShip() {
@@ -28,6 +28,7 @@ public class GraphicalShip extends javax.swing.JFrame {
     }
     
     public GraphicalShip(int k){
+        initComponents();
         j=k;
         setPosition();
     }
@@ -178,7 +179,10 @@ public class GraphicalShip extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new Qna().setVisible(true);
+        if(j==0)
+            new Qna().setVisible(true);
+        else
+            new Qna(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

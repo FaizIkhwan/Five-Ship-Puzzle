@@ -17,20 +17,23 @@ public class Qna extends javax.swing.JFrame {
     private Position po=new Position();
     private ImageIcon[] imagelist=new ImageIcon[5];
     private int i,k;
-    private static int j=0;
+    private int j=0;
     
     public Qna() {
         initComponents();
         InfoPanel.setVisible(false);
         PicInfo.setVisible(false);
         setInfo();
-        jLabel3.setText(q[1].Ship);
+        Name();
     }
     
     public Qna(int b){
+        initComponents();
+        InfoPanel.setVisible(false);
+        PicInfo.setVisible(false);
         j=b;
         setInfo();
-        jLabel3.setText(q[1].Ship);
+        Name();
     }
     
     public void setInfo(){
@@ -40,6 +43,7 @@ public class Qna extends javax.swing.JFrame {
             else if(j == 1)
                 q[l]=po.p[l];
         }
+        Name();
         return;  
     }
     
@@ -65,6 +69,13 @@ public class Qna extends javax.swing.JFrame {
         DestinationInfo.setVisible(false);
     }
     
+    public void Name(){
+        FrenchButton.setText(q[0].Ship);
+        GreekButton.setText(q[1].Ship);
+        BrazilianButton.setText(q[2].Ship);
+        EnglishButton.setText(q[3].Ship);
+        SpanishButton.setText(q[4].Ship);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -108,35 +119,30 @@ public class Qna extends javax.swing.JFrame {
 
         jLabel2.setText("Select a ship you wish to acquire information");
 
-        FrenchButton.setText("French Ship");
         FrenchButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FrenchButtonActionPerformed(evt);
             }
         });
 
-        GreekButton.setText("Greek Ship");
         GreekButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GreekButtonActionPerformed(evt);
             }
         });
 
-        BrazilianButton.setText("Brazilian Ship");
         BrazilianButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BrazilianButtonActionPerformed(evt);
             }
         });
 
-        EnglishButton.setText("English Ship");
         EnglishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnglishButtonActionPerformed(evt);
             }
         });
 
-        SpanishButton.setText("Spanish Ship");
         SpanishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SpanishButtonActionPerformed(evt);
@@ -299,38 +305,35 @@ public class Qna extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(FrenchButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(BrazilianButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SpanishButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(GreekButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(EnglishButton)
-                                .addGap(0, 39, Short.MAX_VALUE))))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(89, 89, 89)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap()
+                                .addComponent(jLabel2))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addComponent(jLabel2))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(133, 133, 133)
-                                        .addComponent(jLabel1)))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGap(133, 133, 133)
+                                .addComponent(jLabel1)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(InfoPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(FrenchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BrazilianButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SpanishButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(GreekButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(EnglishButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,10 +427,14 @@ public class Qna extends javax.swing.JFrame {
 
     private void ShipButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShipButtonActionPerformed
         ContentButton.setSelected(false);
-        if(i==0)
+        if(i==0){
             LeftButton.setEnabled(false);
-        if(i==4)
+            RightButton.setEnabled(true);
+        }
+        if(i==4){
+            LeftButton.setEnabled(true);
             RightButton.setEnabled(false);
+        }
         if(i!=0 && i!=4){
             LeftButton.setEnabled(true);
             RightButton.setEnabled(true);
@@ -498,7 +505,10 @@ public class Qna extends javax.swing.JFrame {
     }//GEN-LAST:event_HeadedButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        new GraphicalShip().setVisible(true);
+        if(j==0)
+            new GraphicalShip().setVisible(true);
+        else
+            new GraphicalShip(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -11,17 +11,13 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.JOptionPane;
-import javax.swing.TransferHandler;
 
 public class Position extends javax.swing.JFrame {
 
     static Data[] p = new Data[5];
     static Data[] d = new Data[5];   
     private ImageIcon[] imagelist=new ImageIcon[5];
-    private int i,k;
-    private static int j;
+    private int i,k, j;
     
     public Position() {
         initComponents();
@@ -305,16 +301,17 @@ public class Position extends javax.swing.JFrame {
         jRadioButton3.setSelected(false);
         jRadioButton4.setSelected(false);
         jRadioButton5.setSelected(false);
+        j=0;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void ConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmButtonActionPerformed
         j=1;
-        new GraphicalShip(j).setVisible(true);
-        new Qna(j).setVisible(true);
+        //new GraphicalShip(j).setVisible(true);
+        //new Qna(j).setVisible(true);
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new GraphicalShip().setVisible(true);    
+        new GraphicalShip(j).setVisible(true);    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -374,7 +371,7 @@ public class Position extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Qna().setVisible(true);
+        new Qna(j).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
