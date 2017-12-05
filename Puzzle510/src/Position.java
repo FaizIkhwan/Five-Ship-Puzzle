@@ -24,9 +24,9 @@ public class Position extends javax.swing.JFrame {
         j=0;
         d[0]=new Data("French Ship","Tea","5.00pm","Blue","Genoa","FrenchShip.png");
         d[1]=new Data("Greek Ship","Coffee","6.00pm","Red","Hamburg","GreekShip.png");
-        d[2]=new Data("Brazilian Ship","Cocoa","8.00pm","Manila","Genoa","BrazilianShip.png");
-        d[3]=new Data("English Ship","Rice","9.00pm","White","Genoa","EnglishShip.png");
-        d[4]=new Data("Spanish Ship","Corn","7.00pm","Green","Genoa","SpanishShip.png"); 
+        d[2]=new Data("Brazilian Ship","Cocoa","8.00pm","Black","Manila","BrazilianShip.png");
+        d[3]=new Data("English Ship","Rice","9.00pm","White","Marseille","EnglishShip.png");
+        d[4]=new Data("Spanish Ship","Corn","7.00pm","Green","Port Said","SpanishShip.png"); 
         for(int l=0;l<imagelist.length;l++)
             imagelist[l]=new ImageIcon(getClass().getResource("/"+d[l].Picture));
         Position0.setIcon(imagelist[0]);
@@ -311,7 +311,8 @@ public class Position extends javax.swing.JFrame {
     }//GEN-LAST:event_ConfirmButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        new GraphicalShip(j).setVisible(true);    
+        new GraphicalShip(j).setVisible(true);   
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -372,6 +373,7 @@ public class Position extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         new Qna(j).setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
