@@ -129,7 +129,7 @@ public class Table extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(10, 190, 40, 40);
+        jButton1.setBounds(0, 200, 40, 40);
 
         jButton2.setText("Show me the ship");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +138,7 @@ public class Table extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(140, 190, 140, 30);
+        jButton2.setBounds(140, 160, 140, 30);
 
         m11.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         m11.setText("m11");
