@@ -1,3 +1,6 @@
+
+import java.awt.Toolkit;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +18,7 @@ public class Credit extends javax.swing.JFrame {
      */
     public Credit() {
         initComponents();
+        icon();
     }
 
     /**
@@ -36,8 +40,8 @@ public class Credit extends javax.swing.JFrame {
         buttonExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trading Ship Puzzle");
         setBackground(new java.awt.Color(102, 255, 204));
-        setPreferredSize(new java.awt.Dimension(299, 545));
 
         labelDescription.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelDescription.setText("<html>Most popular puzzle game! Easy to play and<br>pleasureable game for all age. Easy to learn and <br> fun to master gameplay. We really hope you enjoy it!<br><br>Developer:<br>1. Shahrul Raimie Bin Roslan<br>2. Faiz Ikhwan Bin Mohd Rafhan Syamil<br><br>Credit:<br>www.flaticon.com/free-icon<br>giphy.com<br>http://cliparting.com</html>");
@@ -145,6 +149,11 @@ public class Credit extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_buttonMainMenuActionPerformed
 
+    private void icon()
+    {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Ship.png")));
+    }
+    
     private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
         // TODO add your handling code here:
         System.exit(0);

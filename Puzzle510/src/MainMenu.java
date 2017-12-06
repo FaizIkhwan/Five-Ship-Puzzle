@@ -8,6 +8,7 @@
  *
  * @author Shah
  */
+import java.awt.Toolkit;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import javax.swing.ImageIcon;
@@ -22,10 +23,11 @@ public class MainMenu extends javax.swing.JFrame {
     static AudioStream audioStream;
     private ImageIcon imageOn = new ImageIcon(getClass().getResource("/soundOn.png"));
     private ImageIcon imageOff = new ImageIcon(getClass().getResource("/soundOff.png"));
-    
+    int j=0;
     
     public MainMenu() {
         initComponents();
+        icon();
     }
 
     public void musicPlay()
@@ -73,9 +75,11 @@ public class MainMenu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         SoundButton = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trading Ship Puzzle");
 
         jPanel1.setLayout(null);
 
@@ -102,7 +106,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton4);
-        jButton4.setBounds(90, 200, 180, 23);
+        jButton4.setBounds(90, 180, 180, 23);
 
         jButton5.setText("Shuffle The Ship");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +115,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(90, 300, 180, 23);
+        jButton5.setBounds(90, 250, 180, 23);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Credit.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +124,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(0, 420, 40, 40);
+        jButton1.setBounds(10, 410, 40, 40);
 
         SoundButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/soundon.png"))); // NOI18N
         SoundButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +133,16 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         jPanel1.add(SoundButton);
-        SoundButton.setBounds(320, 420, 40, 40);
+        SoundButton.setBounds(310, 410, 40, 40);
+
+        jButton2.setText("Table Information");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(90, 320, 180, 23);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ocean.gif"))); // NOI18N
         Background.setText("Ocean");
@@ -175,14 +188,25 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new GraphicalShip().setVisible(true);
+        new GraphicalShip(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void icon()
+    {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Ship.png")));
+    }
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        new Qna().setVisible(true);
+        new Qna(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new Table().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +247,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel Background;
     private javax.swing.JButton SoundButton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

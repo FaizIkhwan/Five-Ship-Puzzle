@@ -1,5 +1,6 @@
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 /*
@@ -25,12 +26,14 @@ public class GraphicalShip extends javax.swing.JFrame {
     public GraphicalShip() {
         initComponents();
         setPosition();
+        icon();
     }
     
     public GraphicalShip(int k){
         initComponents();
         j=k;
         setPosition();
+        icon();
     }
     public void setPosition(){
         for (int i = 0; i < imagelist.length; i++) {
@@ -72,6 +75,7 @@ public class GraphicalShip extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trading Ship Puzzle");
         setForeground(java.awt.Color.darkGray);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -184,11 +188,13 @@ public class GraphicalShip extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_HomeButtonActionPerformed
 
+    private void icon()
+    {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Ship.png")));
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(j==0)
-            new Qna().setVisible(true);
-        else
-            new Qna(j).setVisible(true);
+        new Qna(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -198,8 +204,7 @@ public class GraphicalShip extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        new Table().setVisible(true);
+        new Table(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

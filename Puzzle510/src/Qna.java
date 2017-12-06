@@ -1,4 +1,5 @@
 
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 /*
@@ -25,6 +26,7 @@ public class Qna extends javax.swing.JFrame {
         PicInfo.setVisible(false);
         setInfo();
         Name();
+        icon();
     }
     
     public Qna(int b){
@@ -34,6 +36,7 @@ public class Qna extends javax.swing.JFrame {
         j=b;
         setInfo();
         Name();
+        icon();
     }
     
     public void setInfo(){
@@ -113,6 +116,7 @@ public class Qna extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trading Ship Puzzle");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Ship Information");
@@ -503,12 +507,14 @@ public class Qna extends javax.swing.JFrame {
         DestinationInfo.setVisible(true);
         DestinationInfo.setText(q[k].Destination);
     }//GEN-LAST:event_HeadedButtonActionPerformed
-
+    
+    private void icon()
+    {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Ship.png")));
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if(j==0)
-            new GraphicalShip().setVisible(true);
-        else
-            new GraphicalShip(j).setVisible(true);
+        new GraphicalShip(j).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 

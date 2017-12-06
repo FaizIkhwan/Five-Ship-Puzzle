@@ -8,6 +8,7 @@
  *
  * @author Shah & Ikhwan
  */
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
@@ -21,6 +22,7 @@ public class Position extends javax.swing.JFrame {
     
     public Position() {
         initComponents();
+        icon();
         j=0;
         d[0]=new Data("French Ship","Tea","5.00pm","Blue","Genoa","FrenchShip.png");
         d[1]=new Data("Greek Ship","Coffee","6.00pm","Red","Hamburg","GreekShip.png");
@@ -77,6 +79,7 @@ public class Position extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trading Ship Puzzle");
 
         OldPosition.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         OldPosition.setLayout(null);
@@ -353,6 +356,11 @@ public class Position extends javax.swing.JFrame {
         Position6.setIcon(imagelist[i]);
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
+    private void icon()
+    {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Ship.png")));
+    }
+    
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         k=2;
         PChange();
