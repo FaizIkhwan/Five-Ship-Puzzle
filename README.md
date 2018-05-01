@@ -8,4 +8,4 @@ is Madam Asiah.
 
 ## Created by:
 1.	Faiz Ikhwan [github](https://github.com/FaizIkhwan)
-2.	Shahrul Rymie [github] (https://github.com/shahrymie)
+2.	Shahrul Rymie [github](https://github.com/shahrymie)
