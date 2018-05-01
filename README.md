@@ -1,5 +1,5 @@
 # Five Ship Puzzle
-Group assignment for CSC510 Discrete Structure, FSKM UiTM SHAH ALAM, SELANGOR.
+Group assignment for CSC510 Discrete Structure, FSKM UiTM Shah Alam, Selangor.
 
 ## Description 
 This repository contains source code for our assignnment 
